@@ -1,3 +1,7 @@
+# @cntech-io/rena-ui
+
+Custom components for fast development.
+
 ## install
 
 ```bash
@@ -13,3 +17,6 @@ npm install @cntech-io/rena-ui
 * Input (need some fix)
 * Spacer
 * Text
+
+## Todos
+* develop Button component
