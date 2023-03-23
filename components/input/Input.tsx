@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 import {
   ImageSourcePropType,
   TextInput,
   TextInputProps,
   ViewStyle,
-} from 'react-native';
-import Flex from '../flex/Flex';
-import Icon from '../icon/Icon';
-import Text from '../text/Text';
-import inputStyle from './input.style';
+} from "react-native";
+import Flex from "../flex/Flex";
+import Icon from "../icon/Icon";
+import Text from "../text/Text";
+import inputStyle from "./input.style";
 
 type InputProps = {
   style?: ViewStyle;
@@ -19,6 +19,8 @@ type InputProps = {
   label?: string;
   secureTextEntry?: boolean;
   onChangeText: (text: string) => void;
+  borderColor?: string;
+  labelColor?: string;
 };
 
 const Input = (props: InputProps) => {
@@ -32,11 +34,11 @@ const Input = (props: InputProps) => {
     secureTextEntry,
     ...styleProps
   } = props;
-  const _style = inputStyle({...styleProps, size: label ? 'lg' : 'sm'});
+  const _style = inputStyle({ ...styleProps, size: label ? "lg" : "sm" });
 
   let _inputStyle, _textInputProps;
   if (inputProps) {
-    const {style, ...textInputProps} = inputProps;
+    const { style, ...textInputProps } = inputProps;
     _inputStyle = style;
     _textInputProps = textInputProps;
   }
@@ -54,7 +56,7 @@ const Input = (props: InputProps) => {
           onChangeText={onChangeText}
           value={value}
           placeholder={placeholder}
-          hitSlop={{top: 15, left: 15, right: 15, bottom: 15}}
+          hitSlop={{ top: 15, left: 15, right: 15, bottom: 15 }}
           style={[_style.input, _inputStyle]}
           {..._textInputProps}
         />
