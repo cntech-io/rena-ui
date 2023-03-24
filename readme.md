@@ -8,6 +8,10 @@ Custom components for fast development.
 npm install @cntech-io/rena-ui
 ```
 
+```bash
+yarn add @cntech-io/rena-ui
+```
+
 ## Components
 * Button
 * Container
