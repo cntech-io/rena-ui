@@ -6,7 +6,7 @@ import Text from "../text/Text";
 
 type ButtonProps = {
   onPress: () => void;
-  onLongPress: () => void;
+  onLongPress?: () => void;
   style?: ViewStyle;
   label: string;
   bold?: boolean;
