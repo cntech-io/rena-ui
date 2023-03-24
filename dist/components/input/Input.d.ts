@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import { ImageSourcePropType, TextInputProps, ViewStyle } from 'react-native';
+import { ImageSourcePropType, TextInputProps, ViewStyle } from "react-native";
 type InputProps = {
     style?: ViewStyle;
     inputProps?: TextInputProps;
@@ -9,6 +9,8 @@ type InputProps = {
     label?: string;
     secureTextEntry?: boolean;
     onChangeText: (text: string) => void;
+    borderColor?: string;
+    labelColor?: string;
 };
 declare const Input: (props: InputProps) => JSX.Element;
 export default Input;

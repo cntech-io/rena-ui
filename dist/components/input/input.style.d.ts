@@ -1,8 +1,10 @@
-import { ViewStyle } from 'react-native';
-import { Size } from '../style';
+import { ViewStyle } from "react-native";
+import { Size } from "../style";
 type Props = {
     style?: ViewStyle;
     size: Size;
+    borderColor?: string;
+    labelColor?: string;
 };
 declare const inputStyle: (props: Props) => {
     root: {
@@ -32,7 +34,7 @@ declare const inputStyle: (props: Props) => {
         borderWidth?: number | undefined;
         opacity?: number | undefined;
         elevation?: number | undefined;
-        alignContent?: "flex-start" | "flex-end" | "center" | "stretch" | "space-between" | "space-around" | undefined;
+        alignContent?: "center" | "flex-start" | "flex-end" | "stretch" | "space-between" | "space-around" | undefined;
         alignItems?: import("react-native").FlexAlignType | undefined;
         alignSelf?: import("react-native").FlexAlignType | "auto" | undefined;
         aspectRatio?: string | number | undefined;
@@ -51,7 +53,7 @@ declare const inputStyle: (props: Props) => {
         flexShrink?: number | undefined;
         flexWrap?: "wrap" | "nowrap" | "wrap-reverse" | undefined;
         height: any;
-        justifyContent?: "flex-start" | "flex-end" | "center" | "space-between" | "space-around" | "space-evenly" | undefined;
+        justifyContent?: "center" | "flex-start" | "flex-end" | "space-between" | "space-around" | "space-evenly" | undefined;
         left?: string | number | undefined;
         margin?: string | number | undefined;
         marginBottom?: string | number | undefined;
@@ -105,6 +107,7 @@ declare const inputStyle: (props: Props) => {
         alignItems: "center";
     };
     label: {
+        color: string;
         paddingLeft: number;
     };
     input: {

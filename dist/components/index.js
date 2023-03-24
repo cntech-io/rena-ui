@@ -3,7 +3,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Input = exports.Text = exports.IconButton = exports.Header = exports.Spacer = exports.Icon = exports.Flex = exports.Container = void 0;
+exports.Input = exports.Text = exports.IconButton = exports.Header = exports.Spacer = exports.Icon = exports.Flex = exports.Button = exports.Container = void 0;
+const Button_1 = __importDefault(require("./button/Button"));
+exports.Button = Button_1.default;
 const Container_1 = __importDefault(require("./container/Container"));
 exports.Container = Container_1.default;
 const Flex_1 = __importDefault(require("./flex/Flex"));

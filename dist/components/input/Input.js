@@ -22,7 +22,7 @@ const Text_1 = __importDefault(require("../text/Text"));
 const input_style_1 = __importDefault(require("./input.style"));
 const Input = (props) => {
     const { label, inputProps, iconSource, placeholder, value, onChangeText, secureTextEntry } = props, styleProps = __rest(props, ["label", "inputProps", "iconSource", "placeholder", "value", "onChangeText", "secureTextEntry"]);
-    const _style = (0, input_style_1.default)(Object.assign(Object.assign({}, styleProps), { size: label ? 'lg' : 'sm' }));
+    const _style = (0, input_style_1.default)(Object.assign(Object.assign({}, styleProps), { size: label ? "lg" : "sm" }));
     let _inputStyle, _textInputProps;
     if (inputProps) {
         const { style } = inputProps, textInputProps = __rest(inputProps, ["style"]);

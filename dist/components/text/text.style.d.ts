@@ -11,7 +11,7 @@ declare const textStyle: (props: Props) => {
         fontFamily?: string | undefined;
         fontSize: number | undefined;
         fontStyle?: "normal" | "italic" | undefined;
-        fontWeight: "bold" | "normal" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
+        fontWeight: "normal" | "bold" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
         letterSpacing?: number | undefined;
         lineHeight?: number | undefined;
         textAlign?: "center" | "auto" | "left" | "right" | "justify" | undefined;
@@ -54,7 +54,7 @@ declare const textStyle: (props: Props) => {
         borderWidth?: number | undefined;
         opacity?: number | undefined;
         elevation?: number | undefined;
-        alignContent?: "flex-start" | "flex-end" | "center" | "stretch" | "space-between" | "space-around" | undefined;
+        alignContent?: "center" | "flex-start" | "flex-end" | "stretch" | "space-between" | "space-around" | undefined;
         alignItems: import("react-native").FlexAlignType;
         alignSelf?: import("react-native").FlexAlignType | "auto" | undefined;
         aspectRatio?: string | number | undefined;
@@ -73,7 +73,7 @@ declare const textStyle: (props: Props) => {
         flexShrink?: number | undefined;
         flexWrap?: "wrap" | "nowrap" | "wrap-reverse" | undefined;
         height?: string | number | undefined;
-        justifyContent?: "flex-start" | "flex-end" | "center" | "space-between" | "space-around" | "space-evenly" | undefined;
+        justifyContent?: "center" | "flex-start" | "flex-end" | "space-between" | "space-around" | "space-evenly" | undefined;
         left?: string | number | undefined;
         margin?: string | number | undefined;
         marginBottom?: string | number | undefined;
@@ -119,8 +119,8 @@ declare const textStyle: (props: Props) => {
         scaleY?: number | undefined;
         translateX?: number | undefined;
         translateY?: number | undefined;
-        textAlignVertical?: "center" | "auto" | "bottom" | "top" | undefined;
-        verticalAlign?: "auto" | "bottom" | "top" | "middle" | undefined;
+        textAlignVertical?: "center" | "auto" | "top" | "bottom" | undefined;
+        verticalAlign?: "auto" | "top" | "bottom" | "middle" | undefined;
         includeFontPadding?: boolean | undefined;
     };
 };

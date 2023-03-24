@@ -39,7 +39,7 @@ export default class Container extends React.Component<ContainerProps, Container
             borderWidth?: number | undefined;
             opacity?: number | undefined;
             elevation?: number | undefined;
-            alignContent?: "flex-start" | "flex-end" | "center" | "stretch" | "space-between" | "space-around" | undefined;
+            alignContent?: "center" | "flex-start" | "flex-end" | "stretch" | "space-between" | "space-around" | undefined;
             alignItems?: import("react-native").FlexAlignType | undefined;
             alignSelf?: import("react-native").FlexAlignType | "auto" | undefined;
             aspectRatio?: string | number | undefined;
@@ -58,7 +58,7 @@ export default class Container extends React.Component<ContainerProps, Container
             flexShrink?: number | undefined;
             flexWrap?: "wrap" | "nowrap" | "wrap-reverse" | undefined;
             height?: string | number | undefined;
-            justifyContent?: "flex-start" | "flex-end" | "center" | "space-between" | "space-around" | "space-evenly" | undefined;
+            justifyContent?: "center" | "flex-start" | "flex-end" | "space-between" | "space-around" | "space-evenly" | undefined;
             left?: string | number | undefined;
             margin?: string | number | undefined;
             marginBottom?: string | number | undefined;

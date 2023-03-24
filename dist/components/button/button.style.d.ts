@@ -1,12 +1,12 @@
 import { TextStyle, ViewStyle } from 'react-native';
 type Props = {
     style?: ViewStyle;
-    titleStyle?: TextStyle;
+    textStyle?: TextStyle;
 };
-declare const headerStyle: (props: Props) => {
+declare const buttonStyle: (props: Props) => {
     root: {
         backfaceVisibility?: "visible" | "hidden" | undefined;
-        backgroundColor?: import("react-native").ColorValue | undefined;
+        backgroundColor: import("react-native").ColorValue;
         borderBottomColor?: import("react-native").ColorValue | undefined;
         borderBottomEndRadius?: number | undefined;
         borderBottomLeftRadius?: number | undefined;
@@ -17,7 +17,7 @@ declare const headerStyle: (props: Props) => {
         borderEndColor?: import("react-native").ColorValue | undefined;
         borderLeftColor?: import("react-native").ColorValue | undefined;
         borderLeftWidth?: number | undefined;
-        borderRadius?: number | undefined;
+        borderRadius: number;
         borderRightColor?: import("react-native").ColorValue | undefined;
         borderRightWidth?: number | undefined;
         borderStartColor?: import("react-native").ColorValue | undefined;
@@ -66,7 +66,7 @@ declare const headerStyle: (props: Props) => {
         minHeight?: string | number | undefined;
         minWidth?: string | number | undefined;
         overflow?: "visible" | "hidden" | "scroll" | undefined;
-        padding?: string | number | undefined;
+        padding: string | number;
         paddingBottom?: string | number | undefined;
         paddingEnd?: string | number | undefined;
         paddingHorizontal?: string | number | undefined;
@@ -97,8 +97,8 @@ declare const headerStyle: (props: Props) => {
         translateX?: number | undefined;
         translateY?: number | undefined;
     };
-    title: {
-        color?: import("react-native").ColorValue | undefined;
+    text: {
+        color: import("react-native").ColorValue;
         fontFamily?: string | undefined;
         fontSize?: number | undefined;
         fontStyle?: "normal" | "italic" | undefined;
@@ -215,4 +215,4 @@ declare const headerStyle: (props: Props) => {
         includeFontPadding?: boolean | undefined;
     };
 };
-export default headerStyle;
+export default buttonStyle;
