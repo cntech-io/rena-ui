@@ -9,14 +9,14 @@ npm install @cntech-io/rena-ui
 ```
 
 ## Components
+* Button
 * Container
 * Flex
 * Header
 * Icon
 * IconButton
-* Input (need some fix)
+* Input
 * Spacer
 * Text
 
-## Todos
-* develop Button component
+
