@@ -18,3 +18,5 @@ const Flex = (props: FlexProps) => {
 };
 
 export default Flex;
+
+export type { FlexProps };

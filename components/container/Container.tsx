@@ -47,3 +47,5 @@ export default class Container extends React.Component<
     );
   }
 }
+
+export type { ContainerProps };
