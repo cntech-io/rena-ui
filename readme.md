@@ -13,14 +13,14 @@ yarn add @cntech-io/rena-ui
 ```
 
 ## Components
-* Button
-* Container
-* Flex
-* Header
-* Icon
-* IconButton
-* Input
-* Spacer
-* Text
 
-
+- Button
+- ButtonGroup
+- Container
+- Flex
+- Header
+- Icon
+- IconButton
+- Input
+- Spacer
+- Text
