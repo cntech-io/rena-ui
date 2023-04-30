@@ -119,4 +119,4 @@ export default class Container extends React.Component<ContainerProps, Container
     };
     render(): JSX.Element;
 }
-export {};
+export type { ContainerProps };

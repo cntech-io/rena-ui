@@ -6,6 +6,7 @@ import Spacer from "../spacer/Spacer";
 import { HeaderLayout, Size } from "../style";
 import Text from "../text/Text";
 import headerStyle from "./header.style";
+import IconButton from "../icon-button/IconButton";
 
 type HeaderProps = {
   headerLayout: HeaderLayout;
@@ -15,6 +16,8 @@ type HeaderProps = {
   title?: string;
   iconSize?: Size;
   iconSources: ImageSourcePropType[];
+  onRightButtonPress?: () => void;
+  onLeftButtonPress?: () => void;
 };
 
 const Header = (props: HeaderProps) => {
@@ -23,12 +26,33 @@ const Header = (props: HeaderProps) => {
     paddingSize,
     iconSize,
     iconSources,
+    onRightButtonPress,
+    onLeftButtonPress,
     title,
     ...styleProps
   } = props;
   const _style = headerStyle(styleProps);
+  let leftButton, rightButton;
   switch (headerLayout) {
     case "buttons-only":
+      rightButton = onRightButtonPress ? (
+        <IconButton
+          onPress={onRightButtonPress}
+          size={iconSize || "md"}
+          source={iconSources[1]}
+        />
+      ) : (
+        <Icon size={iconSize || "md"} source={iconSources[1]} />
+      );
+      leftButton = onLeftButtonPress ? (
+        <IconButton
+          onPress={onLeftButtonPress}
+          size={iconSize || "md"}
+          source={iconSources[0]}
+        />
+      ) : (
+        <Icon size={iconSize || "md"} source={iconSources[0]} />
+      );
       return (
         <Flex
           fill="fill"
@@ -36,12 +60,21 @@ const Header = (props: HeaderProps) => {
           paddingSize={paddingSize}
           direction={"row"}
         >
-          <Icon size={iconSize || "md"} source={iconSources[0]} />
+          {leftButton}
           <Spacer />
-          <Icon size={iconSize || "md"} source={iconSources[1]} />
+          {rightButton}
         </Flex>
       );
     case "left-button-only":
+      leftButton = onLeftButtonPress ? (
+        <IconButton
+          onPress={onLeftButtonPress}
+          size={iconSize || "md"}
+          source={iconSources[0]}
+        />
+      ) : (
+        <Icon size={iconSize || "md"} source={iconSources[0]} />
+      );
       return (
         <Flex
           fill="fill"
@@ -49,11 +82,20 @@ const Header = (props: HeaderProps) => {
           paddingSize={paddingSize}
           direction={"row"}
         >
-          <Icon size={iconSize || "md"} source={iconSources[0]} />
+          {leftButton}
           <Spacer />
         </Flex>
       );
     case "right-button-only":
+      rightButton = onRightButtonPress ? (
+        <IconButton
+          onPress={onRightButtonPress}
+          size={iconSize || "md"}
+          source={iconSources[0]}
+        />
+      ) : (
+        <Icon size={iconSize || "md"} source={iconSources[0]} />
+      );
       return (
         <Flex
           fill="fill"
@@ -62,7 +104,7 @@ const Header = (props: HeaderProps) => {
           direction={"row"}
         >
           <Spacer />
-          <Icon size={iconSize || "md"} source={iconSources[0]} />
+          {rightButton}
         </Flex>
       );
     case "title-only":
@@ -81,6 +123,15 @@ const Header = (props: HeaderProps) => {
         </Flex>
       );
     case "title-left-button-together":
+      leftButton = onLeftButtonPress ? (
+        <IconButton
+          onPress={onLeftButtonPress}
+          size={iconSize || "md"}
+          source={iconSources[0]}
+        />
+      ) : (
+        <Icon size={iconSize || "md"} source={iconSources[0]} />
+      );
       return (
         <Flex
           fill="fill"
@@ -88,7 +139,7 @@ const Header = (props: HeaderProps) => {
           paddingSize={paddingSize}
           direction={"row"}
         >
-          <Icon size={iconSize || "md"} source={iconSources[0]} />
+          {leftButton}
           <Spacer />
           <Text style={_style.title} size="lg" bold>
             {title || ""}
@@ -98,6 +149,15 @@ const Header = (props: HeaderProps) => {
         </Flex>
       );
     case "title-right-button-together":
+      rightButton = onRightButtonPress ? (
+        <IconButton
+          onPress={onRightButtonPress}
+          size={iconSize || "md"}
+          source={iconSources[0]}
+        />
+      ) : (
+        <Icon size={iconSize || "md"} source={iconSources[0]} />
+      );
       return (
         <Flex
           fill="fill"
@@ -111,10 +171,28 @@ const Header = (props: HeaderProps) => {
             {title || ""}
           </Text>
           <Spacer />
-          <Icon size={iconSize || "md"} source={iconSources[0]} />
+          {rightButton}
         </Flex>
       );
     case "title-buttons-together":
+      rightButton = onRightButtonPress ? (
+        <IconButton
+          onPress={onRightButtonPress}
+          size={iconSize || "md"}
+          source={iconSources[1]}
+        />
+      ) : (
+        <Icon size={iconSize || "md"} source={iconSources[1]} />
+      );
+      leftButton = onLeftButtonPress ? (
+        <IconButton
+          onPress={onLeftButtonPress}
+          size={iconSize || "md"}
+          source={iconSources[0]}
+        />
+      ) : (
+        <Icon size={iconSize || "md"} source={iconSources[0]} />
+      );
       return (
         <Flex
           fill="fill"
@@ -122,13 +200,13 @@ const Header = (props: HeaderProps) => {
           paddingSize={paddingSize}
           direction={"row"}
         >
-          <Icon size={iconSize || "md"} source={iconSources[0]} />
+          {leftButton}
           <Spacer />
           <Text style={_style.title} size="lg" bold>
             {title || ""}
           </Text>
           <Spacer />
-          <Icon size={iconSize || "md"} source={iconSources[1]} />
+          {rightButton}
         </Flex>
       );
     default:

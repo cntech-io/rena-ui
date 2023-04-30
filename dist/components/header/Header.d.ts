@@ -1,6 +1,6 @@
 /// <reference types="react" />
-import { ImageSourcePropType, TextStyle, ViewStyle } from 'react-native/types';
-import { HeaderLayout, Size } from '../style';
+import { ImageSourcePropType, TextStyle, ViewStyle } from "react-native/types";
+import { HeaderLayout, Size } from "../style";
 type HeaderProps = {
     headerLayout: HeaderLayout;
     paddingSize: Size;
@@ -9,6 +9,9 @@ type HeaderProps = {
     title?: string;
     iconSize?: Size;
     iconSources: ImageSourcePropType[];
+    onRightButtonPress?: () => void;
+    onLeftButtonPress?: () => void;
 };
 declare const Header: (props: HeaderProps) => JSX.Element;
 export default Header;
+export type { HeaderProps };

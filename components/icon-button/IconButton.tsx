@@ -5,7 +5,7 @@ import iconButtonStyle from "./icon-button.style";
 
 type IconButtonProps = {
   onPress: () => void;
-  onLongPress: () => void;
+  onLongPress?: () => void;
 };
 
 type Props = IconButtonProps & IconProps;

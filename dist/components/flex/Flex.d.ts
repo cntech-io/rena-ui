@@ -10,3 +10,4 @@ type FlexProps = {
 };
 declare const Flex: (props: FlexProps) => JSX.Element;
 export default Flex;
+export type { FlexProps };

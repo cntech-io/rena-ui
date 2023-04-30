@@ -20,63 +20,73 @@ const Icon_1 = __importDefault(require("../icon/Icon"));
 const Spacer_1 = __importDefault(require("../spacer/Spacer"));
 const Text_1 = __importDefault(require("../text/Text"));
 const header_style_1 = __importDefault(require("./header.style"));
+const IconButton_1 = __importDefault(require("../icon-button/IconButton"));
 const Header = (props) => {
-    const { headerLayout, paddingSize, iconSize, iconSources, title } = props, styleProps = __rest(props, ["headerLayout", "paddingSize", "iconSize", "iconSources", "title"]);
+    const { headerLayout, paddingSize, iconSize, iconSources, onRightButtonPress, onLeftButtonPress, title } = props, styleProps = __rest(props, ["headerLayout", "paddingSize", "iconSize", "iconSources", "onRightButtonPress", "onLeftButtonPress", "title"]);
     const _style = (0, header_style_1.default)(styleProps);
+    let leftButton, rightButton;
     switch (headerLayout) {
-        case 'buttons-only':
-            return (<Flex_1.default fill="fill" style={_style.root} paddingSize={paddingSize} direction={'row'}>
-          <Icon_1.default size={iconSize || 'md'} source={iconSources[0]}/>
+        case "buttons-only":
+            rightButton = onRightButtonPress ? (<IconButton_1.default onPress={onRightButtonPress} size={iconSize || "md"} source={iconSources[1]}/>) : (<Icon_1.default size={iconSize || "md"} source={iconSources[1]}/>);
+            leftButton = onLeftButtonPress ? (<IconButton_1.default onPress={onLeftButtonPress} size={iconSize || "md"} source={iconSources[0]}/>) : (<Icon_1.default size={iconSize || "md"} source={iconSources[0]}/>);
+            return (<Flex_1.default fill="fill" style={_style.root} paddingSize={paddingSize} direction={"row"}>
+          {leftButton}
           <Spacer_1.default />
-          <Icon_1.default size={iconSize || 'md'} source={iconSources[1]}/>
+          {rightButton}
         </Flex_1.default>);
-        case 'left-button-only':
-            return (<Flex_1.default fill="fill" style={_style.root} paddingSize={paddingSize} direction={'row'}>
-          <Icon_1.default size={iconSize || 'md'} source={iconSources[0]}/>
+        case "left-button-only":
+            leftButton = onLeftButtonPress ? (<IconButton_1.default onPress={onLeftButtonPress} size={iconSize || "md"} source={iconSources[0]}/>) : (<Icon_1.default size={iconSize || "md"} source={iconSources[0]}/>);
+            return (<Flex_1.default fill="fill" style={_style.root} paddingSize={paddingSize} direction={"row"}>
+          {leftButton}
           <Spacer_1.default />
         </Flex_1.default>);
-        case 'right-button-only':
-            return (<Flex_1.default fill="fill" style={_style.root} paddingSize={paddingSize} direction={'row'}>
+        case "right-button-only":
+            rightButton = onRightButtonPress ? (<IconButton_1.default onPress={onRightButtonPress} size={iconSize || "md"} source={iconSources[0]}/>) : (<Icon_1.default size={iconSize || "md"} source={iconSources[0]}/>);
+            return (<Flex_1.default fill="fill" style={_style.root} paddingSize={paddingSize} direction={"row"}>
           <Spacer_1.default />
-          <Icon_1.default size={iconSize || 'md'} source={iconSources[0]}/>
+          {rightButton}
         </Flex_1.default>);
-        case 'title-only':
-            return (<Flex_1.default fill="fill" style={_style.root} paddingSize={paddingSize} direction={'row'}>
+        case "title-only":
+            return (<Flex_1.default fill="fill" style={_style.root} paddingSize={paddingSize} direction={"row"}>
           <Spacer_1.default />
           <Text_1.default style={_style.title} size="lg" bold>
-            {title || ''}
+            {title || ""}
           </Text_1.default>
           <Spacer_1.default />
         </Flex_1.default>);
-        case 'title-left-button-together':
-            return (<Flex_1.default fill="fill" style={_style.root} paddingSize={paddingSize} direction={'row'}>
-          <Icon_1.default size={iconSize || 'md'} source={iconSources[0]}/>
+        case "title-left-button-together":
+            leftButton = onLeftButtonPress ? (<IconButton_1.default onPress={onLeftButtonPress} size={iconSize || "md"} source={iconSources[0]}/>) : (<Icon_1.default size={iconSize || "md"} source={iconSources[0]}/>);
+            return (<Flex_1.default fill="fill" style={_style.root} paddingSize={paddingSize} direction={"row"}>
+          {leftButton}
           <Spacer_1.default />
           <Text_1.default style={_style.title} size="lg" bold>
-            {title || ''}
+            {title || ""}
           </Text_1.default>
           <Spacer_1.default />
-          <Icon_1.default isPlaceholder size={iconSize || 'md'} source={0}/>
+          <Icon_1.default isPlaceholder size={iconSize || "md"} source={0}/>
         </Flex_1.default>);
-        case 'title-right-button-together':
-            return (<Flex_1.default fill="fill" style={_style.root} paddingSize={paddingSize} direction={'row'}>
-          <Icon_1.default isPlaceholder size={iconSize || 'md'} source={0}/>
+        case "title-right-button-together":
+            rightButton = onRightButtonPress ? (<IconButton_1.default onPress={onRightButtonPress} size={iconSize || "md"} source={iconSources[0]}/>) : (<Icon_1.default size={iconSize || "md"} source={iconSources[0]}/>);
+            return (<Flex_1.default fill="fill" style={_style.root} paddingSize={paddingSize} direction={"row"}>
+          <Icon_1.default isPlaceholder size={iconSize || "md"} source={0}/>
           <Spacer_1.default />
           <Text_1.default style={_style.title} size="lg" bold>
-            {title || ''}
+            {title || ""}
           </Text_1.default>
           <Spacer_1.default />
-          <Icon_1.default size={iconSize || 'md'} source={iconSources[0]}/>
+          {rightButton}
         </Flex_1.default>);
-        case 'title-buttons-together':
-            return (<Flex_1.default fill="fill" style={_style.root} paddingSize={paddingSize} direction={'row'}>
-          <Icon_1.default size={iconSize || 'md'} source={iconSources[0]}/>
+        case "title-buttons-together":
+            rightButton = onRightButtonPress ? (<IconButton_1.default onPress={onRightButtonPress} size={iconSize || "md"} source={iconSources[1]}/>) : (<Icon_1.default size={iconSize || "md"} source={iconSources[1]}/>);
+            leftButton = onLeftButtonPress ? (<IconButton_1.default onPress={onLeftButtonPress} size={iconSize || "md"} source={iconSources[0]}/>) : (<Icon_1.default size={iconSize || "md"} source={iconSources[0]}/>);
+            return (<Flex_1.default fill="fill" style={_style.root} paddingSize={paddingSize} direction={"row"}>
+          {leftButton}
           <Spacer_1.default />
           <Text_1.default style={_style.title} size="lg" bold>
-            {title || ''}
+            {title || ""}
           </Text_1.default>
           <Spacer_1.default />
-          <Icon_1.default size={iconSize || 'md'} source={iconSources[1]}/>
+          {rightButton}
         </Flex_1.default>);
         default:
             return <Flex_1.default paddingSize={paddingSize} direction="row" fill="fill"/>;
