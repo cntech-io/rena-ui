@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { ViewStyle } from 'react-native';
 import { Direction, Fill, Size } from '../style';
 type FlexProps = {
@@ -8,6 +8,6 @@ type FlexProps = {
     style?: ViewStyle | ViewStyle[];
     paddingSize: Size;
 };
-declare const Flex: (props: FlexProps) => JSX.Element;
+declare const Flex: (props: FlexProps) => React.JSX.Element;
 export default Flex;
 export type { FlexProps };

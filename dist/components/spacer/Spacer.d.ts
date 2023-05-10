@@ -1,3 +1,3 @@
-/// <reference types="react" />
-declare const Spacer: () => JSX.Element;
+import React from 'react';
+declare const Spacer: () => React.JSX.Element;
 export default Spacer;

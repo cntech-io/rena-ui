@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from "react";
 import { TextStyle, ViewStyle } from "react-native";
 import { Size } from "../style";
 type ButtonProps = {
@@ -10,6 +10,6 @@ type ButtonProps = {
     textSize?: Size;
     textStyle?: TextStyle;
 };
-declare const Button: (props: ButtonProps) => JSX.Element;
+declare const Button: (props: ButtonProps) => React.JSX.Element;
 export default Button;
 export type { ButtonProps };

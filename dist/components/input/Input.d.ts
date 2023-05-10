@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from "react";
 import { ImageSourcePropType, TextInputProps, ViewStyle } from "react-native";
 type InputProps = {
     style?: ViewStyle;
@@ -12,6 +12,6 @@ type InputProps = {
     borderColor?: string;
     labelColor?: string;
 };
-declare const Input: (props: InputProps) => JSX.Element;
+declare const Input: (props: InputProps) => React.JSX.Element;
 export default Input;
 export type { InputProps };

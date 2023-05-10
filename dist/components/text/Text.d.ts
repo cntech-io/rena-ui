@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 import { TextStyle } from "react-native";
 import { Size } from "../style";
 type TextProps = {
@@ -7,6 +7,6 @@ type TextProps = {
     bold?: boolean;
     style?: TextStyle;
 };
-declare const Text: (props: TextProps) => JSX.Element;
+declare const Text: (props: TextProps) => React.JSX.Element;
 export default Text;
 export type { TextProps };

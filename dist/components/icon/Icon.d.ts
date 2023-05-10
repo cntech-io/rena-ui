@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from 'react';
 import { ImageSourcePropType, ViewStyle } from 'react-native';
 import { Size } from '../style';
 type IconProps = {
@@ -7,6 +7,6 @@ type IconProps = {
     style?: ViewStyle;
     isPlaceholder?: boolean;
 };
-declare const Icon: (props: IconProps) => JSX.Element;
+declare const Icon: (props: IconProps) => React.JSX.Element;
 export default Icon;
 export type { IconProps };

@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from "react";
 import { ImageSourcePropType, TextStyle, ViewStyle } from "react-native/types";
 import { HeaderLayout, Size } from "../style";
 type HeaderProps = {
@@ -12,6 +12,6 @@ type HeaderProps = {
     onRightButtonPress?: () => void;
     onLeftButtonPress?: () => void;
 };
-declare const Header: (props: HeaderProps) => JSX.Element;
+declare const Header: (props: HeaderProps) => React.JSX.Element;
 export default Header;
 export type { HeaderProps };
