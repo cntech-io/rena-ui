@@ -1,4 +1,4 @@
-import { StyleSheet, ViewStyle } from "react-native";
+import { Platform, StyleSheet, ViewStyle } from "react-native";
 import { Size, Theme } from "../style";
 
 type Props = {
@@ -11,7 +11,8 @@ type Props = {
 const inputStyle = (props: Props) =>
   StyleSheet.create({
     root: {
-      height: Theme.fixedRow[props.size],
+      height: Platform.OS == "android" ? Theme.fixedRow.lg : Theme.fixedRow.md,
+      padding: Theme.padding.none,
       ...props.style,
     },
     wrapper: {
@@ -26,6 +27,7 @@ const inputStyle = (props: Props) =>
     },
     input: {
       flex: 1,
+      padding: Theme.padding.none,
     },
   });
 

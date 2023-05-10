@@ -50,8 +50,8 @@ const Input = (props: InputProps) => {
           {label}
         </Label>
       )}
-      <Flex fill paddingSize="md" direction="row" style={_style.wrapper}>
-        {iconSource && <Icon source={iconSource} size="sm" />}
+      <Flex fill paddingSize="sm" direction="row" style={_style.wrapper}>
+        {iconSource && <Icon source={iconSource} size="md" />}
         <TextInput
           secureTextEntry={secureTextEntry}
           onChangeText={onChangeText}
