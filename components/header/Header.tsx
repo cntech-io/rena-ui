@@ -1,10 +1,10 @@
 import React from "react";
-import { ImageSourcePropType, TextStyle, ViewStyle } from "react-native/types";
+import { ImageSourcePropType, TextStyle, ViewStyle } from "react-native";
 import Flex from "../flex/Flex";
 import Icon from "../icon/Icon";
 import Spacer from "../spacer/Spacer";
 import { HeaderLayout, Size } from "../style";
-import Text from "../text/Text";
+import Label from "../label/Label";
 import headerStyle from "./header.style";
 import IconButton from "../icon-button/IconButton";
 
@@ -116,9 +116,9 @@ const Header = (props: HeaderProps) => {
           direction={"row"}
         >
           <Spacer />
-          <Text style={_style.title} size="lg" bold>
+          <Label style={_style.title} size="lg" bold>
             {title || ""}
-          </Text>
+          </Label>
           <Spacer />
         </Flex>
       );
@@ -141,9 +141,9 @@ const Header = (props: HeaderProps) => {
         >
           {leftButton}
           <Spacer />
-          <Text style={_style.title} size="lg" bold>
+          <Label style={_style.title} size="lg" bold>
             {title || ""}
-          </Text>
+          </Label>
           <Spacer />
           <Icon isPlaceholder size={iconSize || "md"} source={0} />
         </Flex>
@@ -167,9 +167,9 @@ const Header = (props: HeaderProps) => {
         >
           <Icon isPlaceholder size={iconSize || "md"} source={0} />
           <Spacer />
-          <Text style={_style.title} size="lg" bold>
+          <Label style={_style.title} size="lg" bold>
             {title || ""}
-          </Text>
+          </Label>
           <Spacer />
           {rightButton}
         </Flex>
@@ -202,9 +202,9 @@ const Header = (props: HeaderProps) => {
         >
           {leftButton}
           <Spacer />
-          <Text style={_style.title} size="lg" bold>
+          <Label style={_style.title} size="lg" bold>
             {title || ""}
-          </Text>
+          </Label>
           <Spacer />
           {rightButton}
         </Flex>

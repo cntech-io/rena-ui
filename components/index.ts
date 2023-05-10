@@ -6,7 +6,7 @@ import IconButton from "./icon-button/IconButton";
 import Icon from "./icon/Icon";
 import Input from "./input/Input";
 import Spacer from "./spacer/Spacer";
-import Text from "./text/Text";
+import Label from "./label/Label";
 
 export {
   Container,
@@ -16,6 +16,6 @@ export {
   Spacer,
   Header,
   IconButton,
-  Text,
+  Label,
   Input,
 };
