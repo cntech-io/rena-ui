@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import { TextStyle, Text } from "react-native";
 import { Size } from "../style";
-import textStyle from "./label.style";
+import labelStyle from "./label.style";
 
 type LabelProps = {
   children?: ReactNode;
@@ -12,7 +12,7 @@ type LabelProps = {
 
 const Label = (props: LabelProps) => {
   const { children, ...styleProps } = props;
-  const _style = textStyle(styleProps);
+  const _style = labelStyle(styleProps);
   return <Text style={_style.root}>{children}</Text>;
 };
 

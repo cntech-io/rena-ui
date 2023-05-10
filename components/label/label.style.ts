@@ -7,7 +7,7 @@ type Props = {
   bold?: boolean;
 };
 
-const textStyle = (props: Props) =>
+const labelStyle = (props: Props) =>
   StyleSheet.create({
     root: {
       fontSize: Theme.textSize[props.size],
@@ -18,4 +18,4 @@ const textStyle = (props: Props) =>
     },
   });
 
-export default textStyle;
+export default labelStyle;
