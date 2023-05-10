@@ -50,7 +50,7 @@ const Input = (props: InputProps) => {
           {label}
         </Text>
       )}
-      <Flex fill="fill" paddingSize="md" direction="row" style={_style.wrapper}>
+      <Flex fill paddingSize="md" direction="row" style={_style.wrapper}>
         {iconSource && <Icon source={iconSource} size="sm" />}
         <TextInput
           secureTextEntry={secureTextEntry}
@@ -69,4 +69,3 @@ const Input = (props: InputProps) => {
 export default Input;
 
 export type { InputProps };
-

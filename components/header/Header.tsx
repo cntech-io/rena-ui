@@ -55,7 +55,7 @@ const Header = (props: HeaderProps) => {
       );
       return (
         <Flex
-          fill="fill"
+          fill
           style={_style.root}
           paddingSize={paddingSize}
           direction={"row"}
@@ -77,7 +77,7 @@ const Header = (props: HeaderProps) => {
       );
       return (
         <Flex
-          fill="fill"
+          fill
           style={_style.root}
           paddingSize={paddingSize}
           direction={"row"}
@@ -98,7 +98,7 @@ const Header = (props: HeaderProps) => {
       );
       return (
         <Flex
-          fill="fill"
+          fill
           style={_style.root}
           paddingSize={paddingSize}
           direction={"row"}
@@ -110,7 +110,7 @@ const Header = (props: HeaderProps) => {
     case "title-only":
       return (
         <Flex
-          fill="fill"
+          fill
           style={_style.root}
           paddingSize={paddingSize}
           direction={"row"}
@@ -134,7 +134,7 @@ const Header = (props: HeaderProps) => {
       );
       return (
         <Flex
-          fill="fill"
+          fill
           style={_style.root}
           paddingSize={paddingSize}
           direction={"row"}
@@ -160,7 +160,7 @@ const Header = (props: HeaderProps) => {
       );
       return (
         <Flex
-          fill="fill"
+          fill
           style={_style.root}
           paddingSize={paddingSize}
           direction={"row"}
@@ -195,7 +195,7 @@ const Header = (props: HeaderProps) => {
       );
       return (
         <Flex
-          fill="fill"
+          fill
           style={_style.root}
           paddingSize={paddingSize}
           direction={"row"}
@@ -210,7 +210,7 @@ const Header = (props: HeaderProps) => {
         </Flex>
       );
     default:
-      return <Flex paddingSize={paddingSize} direction="row" fill="fill" />;
+      return <Flex paddingSize={paddingSize} direction="row" fill />;
   }
 };
 

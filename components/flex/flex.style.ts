@@ -1,9 +1,9 @@
-import {StyleSheet, ViewStyle} from 'react-native';
-import {Direction, Fill, Size, Theme} from '../style';
+import { StyleSheet, ViewStyle } from "react-native";
+import { Direction, Size, Theme } from "../style";
 
 type Props = {
   direction?: Direction;
-  fill?: Fill;
+  fill?: boolean;
   style?: ViewStyle | ViewStyle[];
   paddingSize: Size;
 };
@@ -11,7 +11,7 @@ type Props = {
 const flexStyle = (props: Props) =>
   StyleSheet.create({
     root: {
-      flex: props.fill === 'fill' ? 1 : undefined,
+      flex: props.fill ? 1 : undefined,
       flexDirection: props.direction,
       padding: Theme.padding[props.paddingSize],
       ...props.style,
