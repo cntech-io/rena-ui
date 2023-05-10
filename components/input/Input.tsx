@@ -34,6 +34,7 @@ const Input = (props: InputProps) => {
     secureTextEntry,
     ...styleProps
   } = props;
+
   const _style = inputStyle({ ...styleProps, size: label ? "lg" : "sm" });
 
   let _inputStyle, _textInputProps;
