@@ -1,15 +1,15 @@
-# @cntech-io/rena-ui
+# @cntech/rena-ui
 
 Custom components for fast development.
 
 ## install
 
 ```bash
-npm install @cntech-io/rena-ui
+npm install @cntech/rena-ui
 ```
 
 ```bash
-yarn add @cntech-io/rena-ui
+yarn add @cntech/rena-ui
 ```
 
 ## Components
