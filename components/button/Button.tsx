@@ -2,7 +2,7 @@ import React from "react";
 import { TextStyle, TouchableOpacity, ViewStyle } from "react-native";
 import { Size } from "../style";
 import buttonStyle from "./button.style";
-import Label from "../label/Label";
+import Text from "../text/Text";
 
 type ButtonProps = {
   onPress: () => void;
@@ -23,9 +23,9 @@ const Button = (props: ButtonProps) => {
       onPress={onPress}
       onLongPress={onLongPress}
     >
-      <Label style={_style.text} bold={bold || true} size={textSize || "md"}>
+      <Text style={_style.text} bold={bold || true} size={textSize || "md"}>
         {label}
-      </Label>
+      </Text>
     </TouchableOpacity>
   );
 };

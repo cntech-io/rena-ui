@@ -4,7 +4,7 @@ import Flex from "../flex/Flex";
 import Icon from "../icon/Icon";
 import Spacer from "../spacer/Spacer";
 import { HeaderLayout, Size } from "../style";
-import Label from "../label/Label";
+import Text from "../text/Text";
 import headerStyle from "./header.style";
 import IconButton from "../icon-button/IconButton";
 
@@ -116,9 +116,9 @@ const Header = (props: HeaderProps) => {
           direction={"row"}
         >
           <Spacer />
-          <Label style={_style.title} size="lg" bold>
+          <Text style={_style.title} size="lg" bold>
             {title || ""}
-          </Label>
+          </Text>
           <Spacer />
         </Flex>
       );
@@ -141,9 +141,9 @@ const Header = (props: HeaderProps) => {
         >
           {leftButton}
           <Spacer />
-          <Label style={_style.title} size="lg" bold>
+          <Text style={_style.title} size="lg" bold>
             {title || ""}
-          </Label>
+          </Text>
           <Spacer />
           <Icon isPlaceholder size={iconSize || "md"} source={0} />
         </Flex>
@@ -167,9 +167,9 @@ const Header = (props: HeaderProps) => {
         >
           <Icon isPlaceholder size={iconSize || "md"} source={0} />
           <Spacer />
-          <Label style={_style.title} size="lg" bold>
+          <Text style={_style.title} size="lg" bold>
             {title || ""}
-          </Label>
+          </Text>
           <Spacer />
           {rightButton}
         </Flex>
@@ -202,9 +202,9 @@ const Header = (props: HeaderProps) => {
         >
           {leftButton}
           <Spacer />
-          <Label style={_style.title} size="lg" bold>
+          <Text style={_style.title} size="lg" bold>
             {title || ""}
-          </Label>
+          </Text>
           <Spacer />
           {rightButton}
         </Flex>

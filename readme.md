@@ -23,4 +23,4 @@ yarn add @cntech/rena-ui
 - IconButton
 - Input
 - Spacer
-- Label
+- Text

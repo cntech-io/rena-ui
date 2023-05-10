@@ -7,7 +7,7 @@ import {
 } from "react-native";
 import Flex from "../flex/Flex";
 import Icon from "../icon/Icon";
-import Label from "../label/Label";
+import Text from "../text/Text";
 import inputStyle from "./input.style";
 
 type InputProps = {
@@ -46,9 +46,9 @@ const Input = (props: InputProps) => {
   return (
     <Flex paddingSize="sm" style={_style.root}>
       {label && (
-        <Label style={_style.label} size="sm" bold>
+        <Text style={_style.label} size="sm" bold>
           {label}
-        </Label>
+        </Text>
       )}
       <Flex fill paddingSize="sm" direction="row" style={_style.wrapper}>
         {iconSource && <Icon source={iconSource} size="md" />}
