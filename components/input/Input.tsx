@@ -9,6 +9,7 @@ import Flex from "../flex/Flex";
 import Icon from "../icon/Icon";
 import Text from "../text/Text";
 import inputStyle from "./input.style";
+import { Size } from "../style";
 
 type InputProps = {
   style?: ViewStyle;
@@ -21,6 +22,7 @@ type InputProps = {
   onChangeText: (text: string) => void;
   borderColor?: string;
   labelColor?: string;
+  iconSize?: Size;
 };
 
 const Input = (props: InputProps) => {
@@ -32,6 +34,7 @@ const Input = (props: InputProps) => {
     value,
     onChangeText,
     secureTextEntry,
+    iconSize,
     ...styleProps
   } = props;
 
@@ -51,7 +54,9 @@ const Input = (props: InputProps) => {
         </Text>
       )}
       <Flex fill paddingSize="sm" direction="row" style={_style.wrapper}>
-        {iconSource && <Icon source={iconSource} size="md" />}
+        {iconSource && (
+          <Icon source={iconSource} size={iconSize ? iconSize : "md"} />
+        )}
         <TextInput
           secureTextEntry={secureTextEntry}
           onChangeText={onChangeText}

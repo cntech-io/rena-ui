@@ -11,7 +11,7 @@ type Props = {
 const inputStyle = (props: Props) =>
   StyleSheet.create({
     root: {
-      height: Platform.OS == "android" ? Theme.fixedRow.lg : Theme.fixedRow.md,
+      height: Platform.OS == "android" ? Theme.fixedRow.sm : Theme.fixedRow.md,
       padding: Theme.padding.none,
       ...props.style,
     },
