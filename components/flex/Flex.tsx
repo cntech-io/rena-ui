@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { View, ViewStyle } from "react-native";
+import { LayoutChangeEvent, View, ViewStyle } from "react-native";
 import { Direction, Size } from "../style";
 import flexStyle from "./flex.style";
 
@@ -9,13 +9,14 @@ type FlexProps = {
   children?: ReactNode;
   style?: ViewStyle | ViewStyle[];
   paddingSize: Size;
+  onLayout?: (event: LayoutChangeEvent) => void;
 };
 
 const Flex = (props: FlexProps) => {
-  const { children, fill, ...styleProps } = props;
+  const { children, fill, onLayout, ...styleProps } = props;
   const _style = flexStyle(styleProps);
   const _fill = fill ? { flex: 1 } : {};
-  return <View style={[_style.root, _fill]}>{children}</View>;
+  return <View onLayout={onLayout} style={[_style.root, _fill]}>{children}</View>;
 };
 
 export default Flex;
