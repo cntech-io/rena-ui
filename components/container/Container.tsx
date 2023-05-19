@@ -34,14 +34,19 @@ export default class Container extends React.Component<
 
     if (safeAreaFlag) {
       if (this.props.gradientColors && this.props.gradientColors.length > 1) {
-        <LinearGradient colors={this.props.gradientColors} style={_style.root}>
-          <SafeAreaView style={[_style.safeArea]}>
-            {headerComponent && (
-              <View style={_style.headerContainer}>{headerComponent}</View>
-            )}
-            <View style={_style.container}>{children}</View>
-          </SafeAreaView>
-        </LinearGradient>;
+        return (
+          <LinearGradient
+            colors={this.props.gradientColors}
+            style={_style.root}
+          >
+            <SafeAreaView style={[_style.safeArea]}>
+              {headerComponent && (
+                <View style={_style.headerContainer}>{headerComponent}</View>
+              )}
+              <View style={_style.container}>{children}</View>
+            </SafeAreaView>
+          </LinearGradient>
+        );
       }
       return (
         <View style={_style.root}>
@@ -55,9 +60,11 @@ export default class Container extends React.Component<
       );
     }
     if (this.props.gradientColors && this.props.gradientColors.length > 1) {
-      <LinearGradient colors={this.props.gradientColors} style={_style.root}>
-        <View style={_style.container}>{children}</View>
-      </LinearGradient>;
+      return (
+        <LinearGradient colors={this.props.gradientColors} style={_style.root}>
+          <View style={_style.container}>{children}</View>
+        </LinearGradient>
+      );
     }
     return (
       <View style={_style.root}>
