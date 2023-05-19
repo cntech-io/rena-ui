@@ -2,7 +2,7 @@
 
 Custom components for fast development.
 
-## install
+## Install
 
 ```bash
 npm install @cntech/rena-ui
@@ -10,6 +10,16 @@ npm install @cntech/rena-ui
 
 ```bash
 yarn add @cntech/rena-ui
+```
+
+## Peer dependencies
+
+```bash
+npm install react-native-linear-gradient
+```
+
+```bash
+yarn add react-native-linear-gradient
 ```
 
 ## Components
