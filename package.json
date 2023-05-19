@@ -1,6 +1,6 @@
 {
   "name": "@cntech/rena-ui",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "",
   "main": "index.ts",
   "repository": "https://github.com/cntech-io/rena-ui.git",
@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-native": "^0.71.4"
+    "react-native": "^0.71.4",
+    "react-native-linear-gradient": "^2.6.2"
   }
 }
