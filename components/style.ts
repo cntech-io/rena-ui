@@ -7,6 +7,7 @@ type Direction =
   | "row-reverse"
   | "column-reverse"
   | undefined;
+type Position = "middle" | undefined;
 type HeaderLayout =
   | "title-only"
   | "title-buttons-together"
@@ -68,4 +69,4 @@ const Theme: theme = {
 
 export { Theme };
 
-export type { Size, Direction, HeaderLayout };
+export type { Size, Direction, HeaderLayout, Position };
