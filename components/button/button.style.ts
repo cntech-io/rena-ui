@@ -9,8 +9,10 @@ type Props = {
 const buttonStyle = (props: Props) =>
   StyleSheet.create({
     root: {
+      height: Theme.fixedRow.sm,
       backgroundColor: "black",
-      padding: Theme.padding.none,
+      paddingLeft: Theme.padding.lg,
+      paddingRight: Theme.padding.lg,
       borderRadius: Theme.borderRadius.lg,
       alignItems: "center",
       justifyContent: "center",
