@@ -13,9 +13,23 @@ const inputStyle = (props: Props) =>
     root: {
       height: Platform.OS == "android" ? Theme.fixedRow.sm : Theme.fixedRow.md,
       padding: Theme.padding.none,
+      minWidth:200,
+      ...props.style,
+    },
+    rootLabelled: {
+      height: Platform.OS == "android" ? Theme.fixedRow.lg : Theme.fixedRow.md,
+      padding: Theme.padding.none,
+      minWidth:200,
       ...props.style,
     },
     wrapper: {
+      borderWidth: 1,
+      borderColor: props.borderColor ? props.borderColor : "black",
+      borderRadius: Theme.borderRadius.lg,
+      alignItems: "center",
+      paddingLeft:Theme.padding.lg,
+    },
+    wrapperWithIcon: {
       borderWidth: 1,
       borderColor: props.borderColor ? props.borderColor : "black",
       borderRadius: Theme.borderRadius.lg,
