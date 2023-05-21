@@ -57,7 +57,7 @@ const Header = (props: HeaderProps) => {
       );
       if (props.gradientColors && props.gradientColors.length > 1) {
         return (
-          <LinearGradient colors={props.gradientColors} style={_style.root}>
+          <LinearGradient colors={props.gradientColors} style={_style.gradient}>
             <Flex
               fill
               style={_style.root}
@@ -95,7 +95,7 @@ const Header = (props: HeaderProps) => {
       );
       if (props.gradientColors && props.gradientColors.length > 1) {
         return (
-          <LinearGradient colors={props.gradientColors} style={_style.root}>
+          <LinearGradient colors={props.gradientColors} style={_style.gradient}>
             <Flex
               fill
               style={_style.root}
@@ -131,7 +131,7 @@ const Header = (props: HeaderProps) => {
       );
       if (props.gradientColors && props.gradientColors.length > 1) {
         return (
-          <LinearGradient colors={props.gradientColors} style={_style.root}>
+          <LinearGradient colors={props.gradientColors} style={_style.gradient}>
             <Flex
               fill
               style={_style.root}
@@ -158,7 +158,7 @@ const Header = (props: HeaderProps) => {
     case "title-only":
       if (props.gradientColors && props.gradientColors.length > 1) {
         return (
-          <LinearGradient colors={props.gradientColors} style={_style.root}>
+          <LinearGradient colors={props.gradientColors} style={_style.gradient}>
             <Flex
               fill
               style={_style.root}
@@ -200,7 +200,7 @@ const Header = (props: HeaderProps) => {
       );
       if (props.gradientColors && props.gradientColors.length > 1) {
         return (
-          <LinearGradient colors={props.gradientColors} style={_style.root}>
+          <LinearGradient colors={props.gradientColors} style={_style.gradient}>
             <Flex
               fill
               style={_style.root}
@@ -246,7 +246,7 @@ const Header = (props: HeaderProps) => {
       );
       if (props.gradientColors && props.gradientColors.length > 1) {
         return (
-          <LinearGradient colors={props.gradientColors} style={_style.root}>
+          <LinearGradient colors={props.gradientColors} style={_style.gradient}>
             <Flex
               fill
               style={_style.root}
@@ -301,7 +301,7 @@ const Header = (props: HeaderProps) => {
       );
       if (props.gradientColors && props.gradientColors.length > 1) {
         return (
-          <LinearGradient colors={props.gradientColors} style={_style.root}>
+          <LinearGradient colors={props.gradientColors} style={_style.gradient}>
             <Flex
               fill
               style={_style.root}

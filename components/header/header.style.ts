@@ -1,4 +1,4 @@
-import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
+import { StyleSheet, TextStyle, ViewStyle } from "react-native";
 
 type Props = {
   style?: ViewStyle;
@@ -7,8 +7,11 @@ type Props = {
 
 const headerStyle = (props: Props) =>
   StyleSheet.create({
+    gradient: {
+      flex: 1,
+    },
     root: {
-      alignItems: 'center',
+      alignItems: "center",
       ...props.style,
     },
     title: {
