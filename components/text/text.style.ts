@@ -5,17 +5,21 @@ type Props = {
   style?: TextStyle;
   size: Size;
   bold?: boolean;
+  center?: boolean;
 };
 
-const textStyle = (props: Props) =>
-  StyleSheet.create({
+const textStyle = (props: Props) => {
+  const _center: TextStyle = props.center ? { textAlign: "center" } : {};
+  return StyleSheet.create({
     root: {
       fontSize: Theme.textSize[props.size],
       alignItems: "center",
       fontWeight: props.bold ? "bold" : "normal",
       padding: Theme.padding.sm,
+      ..._center,
       ...props.style,
     },
   });
+};
 
 export default textStyle;

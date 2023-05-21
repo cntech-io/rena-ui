@@ -7,6 +7,7 @@ type TextProps = {
   children?: ReactNode;
   size: Size;
   bold?: boolean;
+  center?: boolean;
   style?: TextStyle;
 };
 
