@@ -33,4 +33,9 @@ yarn add react-native-linear-gradient
 - IconButton
 - Input
 - Spacer
-- Text
+
+### Text
+
+| Prop   | Required | Short way of          |
+| ------ | -------- | --------------------- |
+| center | false    | {textAliggn:"center"} |
