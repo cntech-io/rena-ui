@@ -36,6 +36,8 @@ yarn add react-native-linear-gradient
 
 ### Text
 
-| Prop   | Required | Short way of          |
-| ------ | -------- | --------------------- |
-| center | false    | {textAliggn:"center"} |
+| Prop   | Required | Short way of         | value      |
+| ------ | -------- | -------------------- | ---------- |
+| size   | true     | {textAlign:"center"} | sm, md, lg |
+| center | false    | {textAlign:"center"} | boolean    |
+| bold   | false    | {fontWeight:"bold"}  | boolean    |
