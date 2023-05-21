@@ -47,6 +47,7 @@ yarn add react-native-linear-gradient
 | Prop        | Required | Short way of        | type             |
 | ----------- | -------- | ------------------- | ---------------- |
 | onPress     | true     |                     | function         |
+| label       | true     |                     | string           |
 | onLongPress | false    |                     | function         |
 | style       | false    |                     | ViewStyle        |
 | textStyle   | false    |                     | TextStyle        |
