@@ -1,6 +1,6 @@
 # @cntech/rena-ui
 
-Custom components for fast development.
+Custom react native components for fast development. 
 
 ## Install
 
