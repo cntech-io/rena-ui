@@ -24,7 +24,6 @@ yarn add react-native-linear-gradient
 
 ## Components
 
-- ButtonGroup
 - Container
 - Flex
 - Header
@@ -53,3 +52,11 @@ yarn add react-native-linear-gradient
 | textStyle   | false    |                     | TextStyle        |
 | textSize    | false    | {fontSize:number}   | "sm", "md", "lg" |
 | bold        | false    | {fontWeight:"bold"} | boolean          |
+
+### ButtonGroup
+
+| Prop        | Required | Short way of          | type             |
+| ----------- | -------- | --------------------- | ---------------- |
+| buttonProps | true     |                       | ButtonProp       |
+| paddingSize | false    |                       | "sm", "md", "lg" |
+| direction   | false    | {flexDirection:"row"} | ViewStyle        |
