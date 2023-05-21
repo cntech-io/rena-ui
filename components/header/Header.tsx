@@ -7,6 +7,7 @@ import { HeaderLayout, Size } from "../style";
 import Text from "../text/Text";
 import headerStyle from "./header.style";
 import IconButton from "../icon-button/IconButton";
+import LinearGradient from "react-native-linear-gradient";
 
 type HeaderProps = {
   headerLayout: HeaderLayout;
@@ -18,6 +19,7 @@ type HeaderProps = {
   iconSources: ImageSourcePropType[];
   onRightButtonPress?: () => void;
   onLeftButtonPress?: () => void;
+  gradientColors?: string[];
 };
 
 const Header = (props: HeaderProps) => {
@@ -53,6 +55,22 @@ const Header = (props: HeaderProps) => {
       ) : (
         <Icon size={iconSize || "md"} source={iconSources[0]} />
       );
+      if (props.gradientColors && props.gradientColors.length > 1) {
+        return (
+          <LinearGradient style={_style.root}>
+            <Flex
+              fill
+              style={_style.root}
+              paddingSize={paddingSize}
+              direction={"row"}
+            >
+              {leftButton}
+              <Spacer />
+              {rightButton}
+            </Flex>
+          </LinearGradient>
+        );
+      }
       return (
         <Flex
           fill
@@ -75,6 +93,21 @@ const Header = (props: HeaderProps) => {
       ) : (
         <Icon size={iconSize || "md"} source={iconSources[0]} />
       );
+      if (props.gradientColors && props.gradientColors.length > 1) {
+        return (
+          <LinearGradient style={_style.root}>
+            <Flex
+              fill
+              style={_style.root}
+              paddingSize={paddingSize}
+              direction={"row"}
+            >
+              {leftButton}
+              <Spacer />
+            </Flex>
+          </LinearGradient>
+        );
+      }
       return (
         <Flex
           fill
@@ -96,6 +129,21 @@ const Header = (props: HeaderProps) => {
       ) : (
         <Icon size={iconSize || "md"} source={iconSources[0]} />
       );
+      if (props.gradientColors && props.gradientColors.length > 1) {
+        return (
+          <LinearGradient style={_style.root}>
+            <Flex
+              fill
+              style={_style.root}
+              paddingSize={paddingSize}
+              direction={"row"}
+            >
+              <Spacer />
+              {rightButton}
+            </Flex>
+          </LinearGradient>
+        );
+      }
       return (
         <Flex
           fill
@@ -108,6 +156,24 @@ const Header = (props: HeaderProps) => {
         </Flex>
       );
     case "title-only":
+      if (props.gradientColors && props.gradientColors.length > 1) {
+        return (
+          <LinearGradient style={_style.root}>
+            <Flex
+              fill
+              style={_style.root}
+              paddingSize={paddingSize}
+              direction={"row"}
+            >
+              <Spacer />
+              <Text style={_style.title} size="lg" bold>
+                {title || ""}
+              </Text>
+              <Spacer />
+            </Flex>
+          </LinearGradient>
+        );
+      }
       return (
         <Flex
           fill
@@ -132,6 +198,26 @@ const Header = (props: HeaderProps) => {
       ) : (
         <Icon size={iconSize || "md"} source={iconSources[0]} />
       );
+      if (props.gradientColors && props.gradientColors.length > 1) {
+        return (
+          <LinearGradient style={_style.root}>
+            <Flex
+              fill
+              style={_style.root}
+              paddingSize={paddingSize}
+              direction={"row"}
+            >
+              {leftButton}
+              <Spacer />
+              <Text style={_style.title} size="lg" bold>
+                {title || ""}
+              </Text>
+              <Spacer />
+              <Icon isPlaceholder size={iconSize || "md"} source={0} />
+            </Flex>
+          </LinearGradient>
+        );
+      }
       return (
         <Flex
           fill
@@ -158,6 +244,26 @@ const Header = (props: HeaderProps) => {
       ) : (
         <Icon size={iconSize || "md"} source={iconSources[0]} />
       );
+      if (props.gradientColors && props.gradientColors.length > 1) {
+        return (
+          <LinearGradient style={_style.root}>
+            <Flex
+              fill
+              style={_style.root}
+              paddingSize={paddingSize}
+              direction={"row"}
+            >
+              <Icon isPlaceholder size={iconSize || "md"} source={0} />
+              <Spacer />
+              <Text style={_style.title} size="lg" bold>
+                {title || ""}
+              </Text>
+              <Spacer />
+              {rightButton}
+            </Flex>
+          </LinearGradient>
+        );
+      }
       return (
         <Flex
           fill
@@ -193,6 +299,26 @@ const Header = (props: HeaderProps) => {
       ) : (
         <Icon size={iconSize || "md"} source={iconSources[0]} />
       );
+      if (props.gradientColors && props.gradientColors.length > 1) {
+        return (
+          <LinearGradient style={_style.root}>
+            <Flex
+              fill
+              style={_style.root}
+              paddingSize={paddingSize}
+              direction={"row"}
+            >
+              {leftButton}
+              <Spacer />
+              <Text style={_style.title} size="lg" bold>
+                {title || ""}
+              </Text>
+              <Spacer />
+              {rightButton}
+            </Flex>
+          </LinearGradient>
+        );
+      }
       return (
         <Flex
           fill
