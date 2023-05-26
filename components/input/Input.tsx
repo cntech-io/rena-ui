@@ -12,7 +12,7 @@ import inputStyle from "./input.style";
 import { Size } from "../style";
 
 type InputProps = {
-  style?: ViewStyle;
+  style?: ViewStyle | ViewStyle[];
   inputProps?: TextInputProps;
   iconSource?: ImageSourcePropType;
   placeholder?: string;
@@ -46,34 +46,44 @@ const Input = (props: InputProps) => {
     _inputStyle = style;
     _textInputProps = textInputProps;
   }
-  if(label){
-    return(
+  if (label) {
+    return (
       <Flex paddingSize="sm" style={_style.rootLabelled}>
-      {label && (
-        <Text style={_style.label} size="sm" bold>
-          {label}
-        </Text>
-      )}
-      <Flex fill paddingSize="sm" direction="row" style={iconSource ? _style.wrapperWithIcon : _style.wrapper}>
-        {iconSource && (
-          <Icon source={iconSource} size={iconSize ? iconSize : "md"} />
+        {label && (
+          <Text style={_style.label} size="sm" bold>
+            {label}
+          </Text>
         )}
-        <TextInput
-          secureTextEntry={secureTextEntry}
-          onChangeText={onChangeText}
-          value={value}
-          placeholder={placeholder}
-          hitSlop={{ top: 15, left: 15, right: 15, bottom: 15 }}
-          style={[_style.input, _inputStyle]}
-          {..._textInputProps}
-        />
+        <Flex
+          fill
+          paddingSize="sm"
+          direction="row"
+          style={iconSource ? _style.wrapperWithIcon : _style.wrapper}
+        >
+          {iconSource && (
+            <Icon source={iconSource} size={iconSize ? iconSize : "md"} />
+          )}
+          <TextInput
+            secureTextEntry={secureTextEntry}
+            onChangeText={onChangeText}
+            value={value}
+            placeholder={placeholder}
+            hitSlop={{ top: 15, left: 15, right: 15, bottom: 15 }}
+            style={[_style.input, _inputStyle]}
+            {..._textInputProps}
+          />
+        </Flex>
       </Flex>
-    </Flex>
-    )
+    );
   }
   return (
     <Flex paddingSize="sm" style={_style.root}>
-      <Flex fill paddingSize="sm" direction="row" style={iconSource ? _style.wrapperWithIcon : _style.wrapper}>
+      <Flex
+        fill
+        paddingSize="sm"
+        direction="row"
+        style={iconSource ? _style.wrapperWithIcon : _style.wrapper}
+      >
         {iconSource && (
           <Icon source={iconSource} size={iconSize ? iconSize : "md"} />
         )}

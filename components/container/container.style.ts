@@ -1,17 +1,20 @@
-import {StyleSheet, ViewStyle} from 'react-native';
-import {Size, Theme} from '../style';
+import { StyleSheet, ViewStyle } from "react-native";
+import { Size, Theme } from "../style";
 
 type Props = {
   paddingSize: Size;
   headerSize: Size;
-  style?: ViewStyle;
+  style?: ViewStyle | ViewStyle[];
 };
 
-const containerStyle = (props: Props) =>
-  StyleSheet.create({
+const containerStyle = (props: Props) => {
+  const _style = Array.isArray(props.style)
+    ? StyleSheet.flatten(props.style)
+    : props.style;
+  return StyleSheet.create({
     root: {
       flex: 1,
-      ...props.style,
+      ..._style,
     },
     container: {
       padding: Theme.padding[props.paddingSize],
@@ -22,8 +25,9 @@ const containerStyle = (props: Props) =>
     },
     headerContainer: {
       height: Theme.headerHeight[props.headerSize],
-      justifyContent: 'center',
+      justifyContent: "center",
     },
   });
+};
 
 export default containerStyle;

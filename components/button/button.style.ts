@@ -2,12 +2,20 @@ import { StyleSheet, TextStyle, ViewStyle } from "react-native";
 import { Theme } from "../style";
 
 type Props = {
-  style?: ViewStyle;
-  textStyle?: TextStyle;
+  style?: ViewStyle | ViewStyle[];
+  textStyle?: TextStyle | TextStyle[];
 };
 
-const buttonStyle = (props: Props) =>
-  StyleSheet.create({
+const buttonStyle = (props: Props) => {
+  const _style = Array.isArray(props.style)
+    ? StyleSheet.flatten(props.style)
+    : props.style;
+
+  const _textStyle = Array.isArray(props.textStyle)
+    ? StyleSheet.flatten(props.textStyle)
+    : props.textStyle;
+
+  return StyleSheet.create({
     root: {
       height: Theme.fixedRow.sm,
       backgroundColor: "black",
@@ -16,12 +24,13 @@ const buttonStyle = (props: Props) =>
       borderRadius: Theme.borderRadius.lg,
       alignItems: "center",
       justifyContent: "center",
-      ...props.style,
+      ..._style,
     },
     text: {
       color: "white",
-      ...props.textStyle,
+      ..._textStyle,
     },
   });
+};
 
 export default buttonStyle;

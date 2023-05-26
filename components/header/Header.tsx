@@ -12,8 +12,8 @@ import LinearGradient from "react-native-linear-gradient";
 type HeaderProps = {
   headerLayout: HeaderLayout;
   paddingSize: Size;
-  style?: ViewStyle;
-  titleStyle?: TextStyle;
+  style?: ViewStyle | ViewStyle[];
+  titleStyle?: TextStyle | TextStyle[];
   title?: string;
   iconSize?: Size;
   iconSources: ImageSourcePropType[];

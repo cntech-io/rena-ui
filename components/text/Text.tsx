@@ -8,7 +8,7 @@ type TextProps = {
   size: Size;
   bold?: boolean;
   center?: boolean;
-  style?: TextStyle;
+  style?: TextStyle | TextStyle[];
 };
 
 const Text = (props: TextProps) => {

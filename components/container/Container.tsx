@@ -9,7 +9,7 @@ type ContainerProps = {
   children?: ReactNode;
   paddingSize: Size;
   headerSize: Size;
-  style?: ViewStyle;
+  style?: ViewStyle | ViewStyle[];
   headerComponent?: ReactNode;
   gradientColors?: string[];
 };

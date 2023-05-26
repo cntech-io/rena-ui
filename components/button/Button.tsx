@@ -7,11 +7,11 @@ import Text from "../text/Text";
 type ButtonProps = {
   onPress: () => void;
   onLongPress?: () => void;
-  style?: ViewStyle;
+  style?: ViewStyle | ViewStyle[];
   label: string;
   bold?: boolean;
   textSize?: Size;
-  textStyle?: TextStyle;
+  textStyle?: TextStyle | TextStyle[];
 };
 
 const Button = (props: ButtonProps) => {
