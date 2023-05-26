@@ -1,21 +1,33 @@
 import { StyleSheet, ViewStyle } from "react-native";
-import { Direction, Size, Theme } from "../style";
+import { Direction, Position, Size, Theme } from "../style";
 
 type Props = {
   direction?: Direction;
   fill?: boolean;
-  style?: ViewStyle | ViewStyle[];
   paddingSize: Size;
+  position?: Position;
+  style?: ViewStyle | ViewStyle[];
 };
 
-const flexStyle = (props: Props) =>
-  StyleSheet.create({
+const flexStyle = (props: Props) => {
+  const _position: ViewStyle =
+    props.position == "middle"
+      ? { justifyContent: "center", alignItems: "center" }
+      : {};
+  const _fill: ViewStyle = props.fill ? { flex: 1 } : {};
+  const _style = Array.isArray(props.style)
+    ? StyleSheet.flatten(props.style)
+    : props.style;
+
+  return StyleSheet.create({
     root: {
-      flex: props.fill ? 1 : undefined,
       flexDirection: props.direction,
       padding: Theme.padding[props.paddingSize],
-      ...props.style,
+      ..._position,
+      ..._fill,
+      ..._style,
     },
   });
+};
 
 export default flexStyle;

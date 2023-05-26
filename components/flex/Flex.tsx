@@ -14,15 +14,11 @@ type FlexProps = {
 };
 
 const Flex = (props: FlexProps) => {
-  const { children, fill, onLayout, position, ...styleProps } = props;
+  const { children, onLayout, ...styleProps } = props;
   const _style = flexStyle(styleProps);
-  const _fill: ViewStyle = fill ? { flex: 1 } : {};
-  const _position: ViewStyle =
-    position == "middle"
-      ? { justifyContent: "center", alignItems: "center" }
-      : {};
+
   return (
-    <View onLayout={onLayout} style={[_style.root, _fill, _position]}>
+    <View onLayout={onLayout} style={_style.root}>
       {children}
     </View>
   );
