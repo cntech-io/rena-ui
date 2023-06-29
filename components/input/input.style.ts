@@ -28,14 +28,14 @@ const inputStyle = (props: Props) => {
     wrapper: {
       borderWidth: 1,
       borderColor: props.borderColor ? props.borderColor : "black",
-      borderRadius: Theme.borderRadius.lg,
+      borderRadius: _style?.borderRadius || Theme.borderRadius.lg,
       alignItems: "center",
       paddingLeft: Theme.padding.lg,
     },
     wrapperWithIcon: {
       borderWidth: 1,
       borderColor: props.borderColor ? props.borderColor : "black",
-      borderRadius: Theme.borderRadius.lg,
+      borderRadius: _style?.borderRadius || Theme.borderRadius.lg,
       alignItems: "center",
     },
     label: {
