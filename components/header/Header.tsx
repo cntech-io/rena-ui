@@ -75,9 +75,11 @@ const Header = (props: HeaderProps) => {
     hasTitle: boolean
   ) => {
     const _middleComponent = hasTitle ? (
-      <Text style={_style.title} size={defaultTheme.headerTextSize} bold>
-        {title || ""}
-      </Text>
+      <Flex paddingSize="NONE" position="MIDDLE" fill>
+        <Text style={_style.title} size={defaultTheme.headerTextSize} bold>
+          {title || ""}
+        </Text>
+      </Flex>
     ) : (
       <Spacer />
     );
