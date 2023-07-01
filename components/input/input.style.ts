@@ -9,21 +9,19 @@ const inputStyle = (props: InputStyleProps) => {
   const _inputStyle = flattenStyle(props.inputStyle);
   return StyleSheet.create({
     root: {
-      height: ThemeSystem.fixedRowHeight[defaultTheme.inputRowHeightSize],
       padding: ThemeSystem.padding[defaultTheme.inputPaddingSize],
       minWidth: defaultTheme.inputMinWidth,
       margin:
         ThemeSystem.margin[props.marginSize || defaultTheme.inputMarginSize],
     },
     rootLabelled: {
-      height:
-        ThemeSystem.fixedRowHeight[defaultTheme.inputRowHeightSizeWithTitle],
       padding: ThemeSystem.padding[defaultTheme.inputPaddingSize],
       minWidth: defaultTheme.inputMinWidth,
       margin:
         ThemeSystem.margin[props.marginSize || defaultTheme.inputMarginSize],
     },
     wrapper: {
+      height: ThemeSystem.fixedRowHeight[defaultTheme.inputRowHeightSize],
       borderWidth:
         props.borderStyle?.borderWidth || defaultTheme.inputBorderWidth,
       borderColor:
@@ -36,6 +34,7 @@ const inputStyle = (props: InputStyleProps) => {
       ..._style,
     },
     wrapperWithIcon: {
+      height: ThemeSystem.fixedRowHeight[defaultTheme.inputRowHeightSize],
       borderWidth:
         props.borderStyle?.borderWidth || defaultTheme.inputBorderWidth,
       borderColor:

@@ -78,7 +78,6 @@ export type DefaultTheme = {
   headerIconSize: `${IconSize}`;
   headerTextSize: `${TextSize}`;
   inputRowHeightSize: `${FixedRowHeight}`;
-  inputRowHeightSizeWithTitle: `${FixedRowHeight}`;
   inputPaddingSize: `${PaddingSize}`;
   inputPaddingLeftSize: `${PaddingSize}`;
   inputMinWidth: number;
