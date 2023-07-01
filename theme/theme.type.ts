@@ -61,9 +61,11 @@ export type Theme = {
 
 export type DefaultTheme = {
   textPaddingSize: `${PaddingSize}`;
+  textMarginSize: `${MarginSize}`;
   flexPaddingSize: `${PaddingSize}`;
   flexDirection: `${Direction}`;
   flexPosition: `${Position}`;
+  flexMarginSize: `${MarginSize}`;
   iconPaddingSize: `${PaddingSize}`;
   buttonTextSize: `${TextSize}`;
   buttonHeight: `${FixedRowHeight}`;
@@ -72,6 +74,7 @@ export type DefaultTheme = {
   buttonTextColor: string;
   buttonTextPosition: `${Position}`;
   buttonBorderRadius: `${BorderRadiusSize}`;
+  buttonMarginSize: `${MarginSize}`;
   headerIconSize: `${IconSize}`;
   headerTextSize: `${TextSize}`;
   inputRowHeightSize: `${FixedRowHeight}`;
@@ -84,4 +87,5 @@ export type DefaultTheme = {
   inputBorderColor: string;
   inputContainerPadding: `${PaddingSize}`;
   inputHitSlop: Insets;
+  inputMarginSize: `${MarginSize}`;
 };

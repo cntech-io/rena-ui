@@ -1,5 +1,5 @@
 import { TextStyle, ViewStyle } from "react-native";
-import { TextSize } from "../../theme/theme.type";
+import { MarginSize, TextSize } from "../../theme/theme.type";
 
 export type ButtonProps = {
   onPress: () => void;
@@ -9,8 +9,9 @@ export type ButtonProps = {
   bold?: boolean;
   textSize?: TextSize;
   textStyle?: TextStyle | TextStyle[];
+  marginSize?: MarginSize;
 };
 
 export type ButtonStyleProps = Partial<
-  Pick<ButtonProps, "textStyle" | "style">
+  Pick<ButtonProps, "textStyle" | "style" | "marginSize">
 >;

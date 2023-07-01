@@ -14,6 +14,8 @@ const flexStyle = (props: FlexStyleProps) => {
     root: {
       flexDirection: props.direction,
       padding: ThemeSystem.padding[props.paddingSize!],
+      margin:
+        ThemeSystem.margin[props.marginSize || defaultTheme.flexMarginSize],
       ..._position,
       ..._fill,
       ..._style,

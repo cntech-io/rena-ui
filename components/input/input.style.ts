@@ -12,11 +12,15 @@ const inputStyle = (props: InputStyleProps) => {
       height: defaultTheme.inputRowHeightSize,
       padding: defaultTheme.inputPaddingSize,
       minWidth: defaultTheme.inputMinWidth,
+      margin:
+        ThemeSystem.margin[props.marginSize || defaultTheme.inputMarginSize],
     },
     rootLabelled: {
       height: defaultTheme.inputRowHeightSizeWithTitle,
       padding: defaultTheme.inputPaddingSize,
       minWidth: defaultTheme.inputMinWidth,
+      margin:
+        ThemeSystem.margin[props.marginSize || defaultTheme.inputMarginSize],
     },
     wrapper: {
       borderWidth:

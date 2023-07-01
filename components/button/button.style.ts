@@ -13,6 +13,7 @@ const buttonStyle = (props: ButtonStyleProps) => {
     root: {
       height: ThemeSystem.fixedRowHeight[defaultTheme.buttonHeight],
       backgroundColor: defaultTheme.buttonBackgroundColor,
+      margin: ThemeSystem.margin[props.marginSize || defaultTheme.buttonMarginSize],
       paddingLeft: ThemeSystem.padding[defaultTheme.buttonHorizontalPadding],
       paddingRight: ThemeSystem.padding[defaultTheme.buttonHorizontalPadding],
       borderRadius:

@@ -1,6 +1,6 @@
 import { TextStyle } from "react-native";
 import { ReactNode } from "react";
-import { TextSize } from "../../theme/theme.type";
+import { MarginSize, TextSize } from "../../theme/theme.type";
 
 export type TextProps = {
   size: TextSize;
@@ -8,6 +8,7 @@ export type TextProps = {
   bold?: boolean;
   center?: boolean;
   style?: TextStyle | TextStyle[];
+  marginSize?: MarginSize;
 };
 
 export type TextStyleProps = Partial<Omit<TextProps, "children">>;

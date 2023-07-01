@@ -14,6 +14,8 @@ const textStyle = (props: TextStyleProps) => {
       alignItems: "center",
       fontWeight: props.bold ? "bold" : "normal",
       padding: ThemeSystem.padding[defaultTheme.textPaddingSize],
+      margin:
+        ThemeSystem.margin[props.marginSize || defaultTheme.textMarginSize],
       ..._center,
       ..._style,
     },
