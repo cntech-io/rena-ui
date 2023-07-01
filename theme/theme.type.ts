@@ -59,5 +59,13 @@ type DefaultTheme = {
   buttonBorderRadius: `${BorderRadiusSize}`;
   headerIconSize: `${IconSize}`;
   headerTextSize: `${TextSize}`;
-
+  inputRowHeightSize: `${FixedRowHeight}`;
+  inputRowHeightSizeWithTitle: `${FixedRowHeight}`;
+  inputPaddingSize: `${PaddingSize}`;
+  inputPaddingLeftSize: `${PaddingSize}`;
+  inputMinWidth: number;
+  inputBorderRadius: `${BorderRadiusSize}`;
+  inputBorderWidth: number;
+  inputBorderColor: string;
+  inputContainerPadding: `${PaddingSize}`;
 };

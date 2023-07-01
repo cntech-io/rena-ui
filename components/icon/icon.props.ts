@@ -2,7 +2,7 @@ import { ImageSourcePropType, ViewStyle } from "react-native";
 
 export type IconProps = {
   size: IconSize;
-  source: ImageSourcePropType;
+  source?: ImageSourcePropType;
   style?: ViewStyle | ViewStyle[];
   isPlaceholder?: boolean;
 };

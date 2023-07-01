@@ -23,366 +23,112 @@ const Header = (props: HeaderProps) => {
 
   const _style = headerStyle(styleProps);
 
-  let leftButton, rightButton;
+  const renderLeftComponent = (hasButton: boolean) => {
+    if (!hasButton) {
+      return (
+        <Icon
+          size={iconSize || defaultTheme.headerIconSize}
+          isPlaceholder={true}
+        />
+      );
+    }
+    return onLeftButtonPress ? (
+      <IconButton
+        onPress={onLeftButtonPress}
+        size={iconSize || defaultTheme.headerIconSize}
+        source={iconSources[0]}
+      />
+    ) : (
+      <Icon
+        size={iconSize || defaultTheme.headerIconSize}
+        source={iconSources[0]}
+      />
+    );
+  };
+
+  const renderRightComponent = (hasButton: boolean) => {
+    if (!hasButton) {
+      return (
+        <Icon
+          size={iconSize || defaultTheme.headerIconSize}
+          isPlaceholder={true}
+        />
+      );
+    }
+    return onRightButtonPress ? (
+      <IconButton
+        onPress={onRightButtonPress}
+        size={iconSize || defaultTheme.headerIconSize}
+        source={iconSources[0]}
+      />
+    ) : (
+      <Icon
+        size={iconSize || defaultTheme.headerIconSize}
+        source={iconSources[0]}
+      />
+    );
+  };
+
+  const renderBody = (
+    hasLeftButton: boolean,
+    hasRightButton: boolean,
+    hasTitle: boolean
+  ) => {
+    const _middleComponent = hasTitle ? (
+      <Text style={_style.title} size={defaultTheme.headerTextSize} bold>
+        {title || ""}
+      </Text>
+    ) : (
+      <Spacer />
+    );
+
+    if (props.gradientColors && props.gradientColors.length > 1) {
+      return (
+        <LinearGradient colors={props.gradientColors} style={_style.gradient}>
+          <Flex
+            fill
+            style={_style.root}
+            paddingSize={paddingSize}
+            direction={"row"}
+          >
+            {renderLeftComponent(hasLeftButton)}
+            {_middleComponent}
+            {renderRightComponent(hasRightButton)}
+          </Flex>
+        </LinearGradient>
+      );
+    }
+    return (
+      <Flex
+        fill
+        style={_style.root}
+        paddingSize={paddingSize}
+        direction={"row"}
+      >
+        {renderLeftComponent(hasLeftButton)}
+        {_middleComponent}
+        {renderRightComponent(hasRightButton)}
+      </Flex>
+    );
+  };
 
   switch (headerLayout) {
     case "buttons-only":
-      rightButton = onRightButtonPress ? (
-        <IconButton
-          onPress={onRightButtonPress}
-          size={iconSize || defaultTheme.headerIconSize}
-          source={iconSources[1]}
-        />
-      ) : (
-        <Icon
-          size={iconSize || defaultTheme.headerIconSize}
-          source={iconSources[1]}
-        />
-      );
-      leftButton = onLeftButtonPress ? (
-        <IconButton
-          onPress={onLeftButtonPress}
-          size={iconSize || defaultTheme.headerIconSize}
-          source={iconSources[0]}
-        />
-      ) : (
-        <Icon
-          size={iconSize || defaultTheme.headerIconSize}
-          source={iconSources[0]}
-        />
-      );
-      if (props.gradientColors && props.gradientColors.length > 1) {
-        return (
-          <LinearGradient colors={props.gradientColors} style={_style.gradient}>
-            <Flex
-              fill
-              style={_style.root}
-              paddingSize={paddingSize}
-              direction={"row"}
-            >
-              {leftButton}
-              <Spacer />
-              {rightButton}
-            </Flex>
-          </LinearGradient>
-        );
-      }
-      return (
-        <Flex
-          fill
-          style={_style.root}
-          paddingSize={paddingSize}
-          direction={"row"}
-        >
-          {leftButton}
-          <Spacer />
-          {rightButton}
-        </Flex>
-      );
+      return renderBody(true, true, false);
     case "left-button-only":
-      leftButton = onLeftButtonPress ? (
-        <IconButton
-          onPress={onLeftButtonPress}
-          size={iconSize || defaultTheme.headerIconSize}
-          source={iconSources[0]}
-        />
-      ) : (
-        <Icon
-          size={iconSize || defaultTheme.headerIconSize}
-          source={iconSources[0]}
-        />
-      );
-      if (props.gradientColors && props.gradientColors.length > 1) {
-        return (
-          <LinearGradient colors={props.gradientColors} style={_style.gradient}>
-            <Flex
-              fill
-              style={_style.root}
-              paddingSize={paddingSize}
-              direction={"row"}
-            >
-              {leftButton}
-              <Spacer />
-            </Flex>
-          </LinearGradient>
-        );
-      }
-      return (
-        <Flex
-          fill
-          style={_style.root}
-          paddingSize={paddingSize}
-          direction={"row"}
-        >
-          {leftButton}
-          <Spacer />
-        </Flex>
-      );
+      return renderBody(true, false, false);
     case "right-button-only":
-      rightButton = onRightButtonPress ? (
-        <IconButton
-          onPress={onRightButtonPress}
-          size={iconSize || defaultTheme.headerIconSize}
-          source={iconSources[0]}
-        />
-      ) : (
-        <Icon
-          size={iconSize || defaultTheme.headerIconSize}
-          source={iconSources[0]}
-        />
-      );
-      if (props.gradientColors && props.gradientColors.length > 1) {
-        return (
-          <LinearGradient colors={props.gradientColors} style={_style.gradient}>
-            <Flex
-              fill
-              style={_style.root}
-              paddingSize={paddingSize}
-              direction={"row"}
-            >
-              <Spacer />
-              {rightButton}
-            </Flex>
-          </LinearGradient>
-        );
-      }
-      return (
-        <Flex
-          fill
-          style={_style.root}
-          paddingSize={paddingSize}
-          direction={"row"}
-        >
-          <Spacer />
-          {rightButton}
-        </Flex>
-      );
+      return renderBody(false, true, false);
     case "title-only":
-      if (props.gradientColors && props.gradientColors.length > 1) {
-        return (
-          <LinearGradient colors={props.gradientColors} style={_style.gradient}>
-            <Flex
-              fill
-              style={_style.root}
-              paddingSize={paddingSize}
-              direction={"row"}
-            >
-              <Spacer />
-              <Text
-                style={_style.title}
-                size={defaultTheme.headerTextSize}
-                bold
-              >
-                {title || ""}
-              </Text>
-              <Spacer />
-            </Flex>
-          </LinearGradient>
-        );
-      }
-      return (
-        <Flex
-          fill
-          style={_style.root}
-          paddingSize={paddingSize}
-          direction={"row"}
-        >
-          <Spacer />
-          <Text style={_style.title} size={defaultTheme.headerTextSize} bold>
-            {title || ""}
-          </Text>
-          <Spacer />
-        </Flex>
-      );
+      return renderBody(false, false, true);
     case "title-left-button-together":
-      leftButton = onLeftButtonPress ? (
-        <IconButton
-          onPress={onLeftButtonPress}
-          size={iconSize || defaultTheme.headerIconSize}
-          source={iconSources[0]}
-        />
-      ) : (
-        <Icon
-          size={iconSize || defaultTheme.headerIconSize}
-          source={iconSources[0]}
-        />
-      );
-      if (props.gradientColors && props.gradientColors.length > 1) {
-        return (
-          <LinearGradient colors={props.gradientColors} style={_style.gradient}>
-            <Flex
-              fill
-              style={_style.root}
-              paddingSize={paddingSize}
-              direction={"row"}
-            >
-              {leftButton}
-              <Spacer />
-              <Text
-                style={_style.title}
-                size={defaultTheme.headerTextSize}
-                bold
-              >
-                {title || ""}
-              </Text>
-              <Spacer />
-              <Icon
-                isPlaceholder
-                size={iconSize || defaultTheme.headerIconSize}
-                source={0}
-              />
-            </Flex>
-          </LinearGradient>
-        );
-      }
-      return (
-        <Flex
-          fill
-          style={_style.root}
-          paddingSize={paddingSize}
-          direction={"row"}
-        >
-          {leftButton}
-          <Spacer />
-          <Text style={_style.title} size={defaultTheme.headerTextSize} bold>
-            {title || ""}
-          </Text>
-          <Spacer />
-          <Icon
-            isPlaceholder
-            size={iconSize || defaultTheme.headerIconSize}
-            source={0}
-          />
-        </Flex>
-      );
+      return renderBody(true, false, true);
     case "title-right-button-together":
-      rightButton = onRightButtonPress ? (
-        <IconButton
-          onPress={onRightButtonPress}
-          size={iconSize || defaultTheme.headerIconSize}
-          source={iconSources[0]}
-        />
-      ) : (
-        <Icon
-          size={iconSize || defaultTheme.headerIconSize}
-          source={iconSources[0]}
-        />
-      );
-      if (props.gradientColors && props.gradientColors.length > 1) {
-        return (
-          <LinearGradient colors={props.gradientColors} style={_style.gradient}>
-            <Flex
-              fill
-              style={_style.root}
-              paddingSize={paddingSize}
-              direction={"row"}
-            >
-              <Icon
-                isPlaceholder
-                size={iconSize || defaultTheme.headerIconSize}
-                source={0}
-              />
-              <Spacer />
-              <Text
-                style={_style.title}
-                size={defaultTheme.headerTextSize}
-                bold
-              >
-                {title || ""}
-              </Text>
-              <Spacer />
-              {rightButton}
-            </Flex>
-          </LinearGradient>
-        );
-      }
-      return (
-        <Flex
-          fill
-          style={_style.root}
-          paddingSize={paddingSize}
-          direction={"row"}
-        >
-          <Icon
-            isPlaceholder
-            size={iconSize || defaultTheme.headerIconSize}
-            source={0}
-          />
-          <Spacer />
-          <Text style={_style.title} size={defaultTheme.headerTextSize} bold>
-            {title || ""}
-          </Text>
-          <Spacer />
-          {rightButton}
-        </Flex>
-      );
+      return renderBody(false, true, true);
     case "title-buttons-together":
-      rightButton = onRightButtonPress ? (
-        <IconButton
-          onPress={onRightButtonPress}
-          size={iconSize || defaultTheme.headerIconSize}
-          source={iconSources[1]}
-        />
-      ) : (
-        <Icon
-          size={iconSize || defaultTheme.headerIconSize}
-          source={iconSources[1]}
-        />
-      );
-      leftButton = onLeftButtonPress ? (
-        <IconButton
-          onPress={onLeftButtonPress}
-          size={iconSize || defaultTheme.headerIconSize}
-          source={iconSources[0]}
-        />
-      ) : (
-        <Icon
-          size={iconSize || defaultTheme.headerIconSize}
-          source={iconSources[0]}
-        />
-      );
-      if (props.gradientColors && props.gradientColors.length > 1) {
-        return (
-          <LinearGradient colors={props.gradientColors} style={_style.gradient}>
-            <Flex
-              fill
-              style={_style.root}
-              paddingSize={paddingSize}
-              direction={"row"}
-            >
-              {leftButton}
-              <Spacer />
-              <Text
-                style={_style.title}
-                size={defaultTheme.headerTextSize}
-                bold
-              >
-                {title || ""}
-              </Text>
-              <Spacer />
-              {rightButton}
-            </Flex>
-          </LinearGradient>
-        );
-      }
-      return (
-        <Flex
-          fill
-          style={_style.root}
-          paddingSize={paddingSize}
-          direction={"row"}
-        >
-          {leftButton}
-          <Spacer />
-          <Text style={_style.title} size={defaultTheme.headerTextSize} bold>
-            {title || ""}
-          </Text>
-          <Spacer />
-          {rightButton}
-        </Flex>
-      );
+      return renderBody(true, true, true);
     default:
-      return <Flex paddingSize={paddingSize} direction="row" fill />;
+      return renderBody(false, false, false);
   }
 };
 

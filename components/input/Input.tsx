@@ -1,91 +1,46 @@
 import React from "react";
-import {
-  ImageSourcePropType,
-  TextInput,
-  TextInputProps,
-  ViewStyle,
-} from "react-native";
+import { TextInput } from "react-native";
 import Flex from "../flex/Flex";
-import Icon from "../icon/Icon";
-import Text from "../text/Text";
 import inputStyle from "./input.style";
-import { Size } from "../style";
 import { InputProps } from "./input.props";
+import defaultTheme from "../../theme/default";
 
 const Input = (props: InputProps) => {
-  
-}
-
-const InputX = (props: InputProps) => {
   const {
-    label,
+    leftComponent,
+    rightComponent,
+    titleComponent,
     inputProps,
-    iconSource,
     placeholder,
     value,
     onChangeText,
     secureTextEntry,
-    iconSize,
     ...styleProps
   } = props;
 
-  const _style = inputStyle({ ...styleProps, size: label ? "lg" : "sm" });
+  const _style = inputStyle({ ...styleProps });
 
-  let _inputStyle, _textInputProps;
-  if (inputProps) {
-    const { style, ...textInputProps } = inputProps;
-    _inputStyle = style;
-    _textInputProps = textInputProps;
-  }
-  if (label) {
-    return (
-      <Flex paddingSize="sm" style={_style.rootLabelled}>
-        {label && (
-          <Text style={_style.label} size="sm" bold>
-            {label}
-          </Text>
-        )}
-        <Flex
-          fill
-          paddingSize="sm"
-          direction="row"
-          style={iconSource ? _style.wrapperWithIcon : _style.wrapper}
-        >
-          {iconSource && (
-            <Icon source={iconSource} size={iconSize ? iconSize : "md"} />
-          )}
-          <TextInput
-            secureTextEntry={secureTextEntry}
-            onChangeText={onChangeText}
-            value={value}
-            placeholder={placeholder}
-            hitSlop={{ top: 15, left: 15, right: 15, bottom: 15 }}
-            style={[_style.input, _inputStyle]}
-            {..._textInputProps}
-          />
-        </Flex>
-      </Flex>
-    );
-  }
   return (
-    <Flex paddingSize="sm" style={_style.root}>
+    <Flex
+      paddingSize={defaultTheme.inputContainerPadding}
+      style={titleComponent ? _style.rootLabelled : _style.root}
+    >
+      {titleComponent}
       <Flex
         fill
-        paddingSize="sm"
+        paddingSize={defaultTheme.inputContainerPadding}
         direction="row"
-        style={iconSource ? _style.wrapperWithIcon : _style.wrapper}
+        style={leftComponent ? _style.wrapperWithIcon : _style.wrapper}
       >
-        {iconSource && (
-          <Icon source={iconSource} size={iconSize ? iconSize : "md"} />
-        )}
+        {leftComponent}
         <TextInput
           secureTextEntry={secureTextEntry}
           onChangeText={onChangeText}
           value={value}
           placeholder={placeholder}
           hitSlop={{ top: 15, left: 15, right: 15, bottom: 15 }}
-          style={[_style.input, _inputStyle]}
-          {..._textInputProps}
+          style={[_style.input, props.inputStyle]}
+          {...props.inputProps}
         />
       </Flex>
     </Flex>

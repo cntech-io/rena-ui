@@ -1,13 +1,8 @@
-import { StyleSheet, ViewStyle } from "react-native";
-import { Size, Theme } from "../style";
+import { StyleSheet } from "react-native";
+import { ContainerStyleProps } from "./container.props";
+import { ThemeSystem } from "../../theme";
 
-type Props = {
-  paddingSize: Size;
-  headerSize: Size;
-  style?: ViewStyle | ViewStyle[];
-};
-
-const containerStyle = (props: Props) => {
+const containerStyle = (props: ContainerStyleProps) => {
   const _style = Array.isArray(props.style)
     ? StyleSheet.flatten(props.style)
     : props.style;
@@ -17,14 +12,14 @@ const containerStyle = (props: Props) => {
       ..._style,
     },
     container: {
-      padding: Theme.padding[props.paddingSize],
+      padding: ThemeSystem.padding[props.paddingSize!],
       flex: 1,
     },
     safeArea: {
       flex: 1,
     },
     headerContainer: {
-      height: Theme.headerHeight[props.headerSize],
+      height: ThemeSystem.headerHeight[props.headerSize!],
       justifyContent: "center",
     },
   });

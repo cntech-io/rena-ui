@@ -1,26 +1,14 @@
-import React, { ReactNode } from "react";
-import { SafeAreaView, View, ViewStyle } from "react-native";
-import { Size } from "../style";
+import React from "react";
+import { SafeAreaView, View } from "react-native";
 import containerStyle from "./container.style";
 import LinearGradient from "react-native-linear-gradient";
-
-type ContainerProps = {
-  safeAreaFlag?: boolean;
-  children?: ReactNode;
-  paddingSize: Size;
-  headerSize: Size;
-  style?: ViewStyle | ViewStyle[];
-  headerComponent?: ReactNode;
-  gradientColors?: string[];
-};
-
-type ContainerState = {};
+import { ContainerProps, ContainerState } from "./container.props";
 
 export default class Container extends React.Component<
   ContainerProps,
   ContainerState
 > {
-  style = containerStyle({
+  _style = containerStyle({
     paddingSize: this.props.paddingSize,
     headerSize: this.props.headerSize,
     style: this.props.style,

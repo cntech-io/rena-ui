@@ -1,3 +1,4 @@
+import ButtonGroup from "./button-group/ButtonGroup";
 import Button from "./button/Button";
 import Container from "./container/Container";
 import Flex from "./flex/Flex";
@@ -11,6 +12,7 @@ import Text from "./text/Text";
 export {
   Container,
   Button,
+  ButtonGroup,
   Flex,
   Icon,
   Spacer,

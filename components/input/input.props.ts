@@ -1,15 +1,25 @@
 import { TextInputProps, TextStyle, ViewStyle } from "react-native";
 
+interface BorderStyle {
+  borderRadius: number;
+  borderColor: string;
+  borderWidth: number;
+}
+
 export type InputProps = {
   value: string;
   onChangeText: (text: string) => void;
   style?: ViewStyle | ViewStyle[];
   inputProps?: TextInputProps;
-  inputStyle?: TextStyle;
+  inputStyle?: TextStyle | TextStyle[];
   placeholder?: string;
   secureTextEntry?: boolean;
-  borderStyle?: ViewStyle;
-  rightComponent?: React.JSX.Element;
-  leftComponent?: React.JSX.Element;
-  titleComponent?: React.JSX.Element;
+  borderStyle?: BorderStyle;
+  rightComponent?: JSX.Element;
+  leftComponent?: JSX.Element;
+  titleComponent?: JSX.Element;
 };
+
+export type InputStyleProps = Partial<
+  Pick<InputProps, "style" | "borderStyle" | "inputStyle">
+>;

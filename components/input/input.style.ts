@@ -1,50 +1,50 @@
-import { Platform, StyleSheet, ViewStyle } from "react-native";
-import { Size, Theme } from "../style";
+import { StyleSheet } from "react-native";
+import { flattenStyle } from "../../utils";
+import { InputStyleProps } from "./input.props";
+import { ThemeSystem } from "../../theme";
+import defaultTheme from "../../theme/default";
 
-type Props = {
-  style?: ViewStyle | ViewStyle[];
-  size: Size;
-  borderColor?: string;
-  labelColor?: string;
-};
-
-const inputStyle = (props: Props) => {
-  const _style = Array.isArray(props.style)
-    ? StyleSheet.flatten(props.style)
-    : props.style;
+const inputStyle = (props: InputStyleProps) => {
+  const _style = flattenStyle(props.style);
+  const _inputStyle = flattenStyle(props.inputStyle);
   return StyleSheet.create({
     root: {
-      height: Platform.OS == "android" ? Theme.fixedRow.sm : Theme.fixedRow.md,
-      padding: Theme.padding.none,
-      minWidth: 200,
+      height: defaultTheme.inputRowHeightSize,
+      padding: defaultTheme.inputPaddingSize,
+      minWidth: defaultTheme.inputMinWidth,
     },
     rootLabelled: {
-      height: Platform.OS == "android" ? Theme.fixedRow.lg : Theme.fixedRow.md,
-      padding: Theme.padding.none,
-      minWidth: 200,
+      height: defaultTheme.inputRowHeightSizeWithTitle,
+      padding: defaultTheme.inputPaddingSize,
+      minWidth: defaultTheme.inputMinWidth,
     },
     wrapper: {
-      borderWidth: 1,
-      borderColor: props.borderColor ? props.borderColor : "black",
-      borderRadius: Theme.borderRadius.lg,
+      borderWidth:
+        props.borderStyle?.borderWidth || defaultTheme.inputBorderWidth,
+      borderColor:
+        props.borderStyle?.borderColor || defaultTheme.inputBorderColor,
+      borderRadius:
+        props.borderStyle?.borderRadius ||
+        ThemeSystem.borderRadiusSize[defaultTheme.inputBorderRadius],
       alignItems: "center",
-      paddingLeft: Theme.padding.lg,
+      paddingLeft: ThemeSystem.padding[defaultTheme.inputPaddingLeftSize],
       ..._style,
     },
     wrapperWithIcon: {
-      borderWidth: 1,
-      borderColor: props.borderColor ? props.borderColor : "black",
-      borderRadius: Theme.borderRadius.lg,
+      borderWidth:
+        props.borderStyle?.borderWidth || defaultTheme.inputBorderWidth,
+      borderColor:
+        props.borderStyle?.borderColor || defaultTheme.inputBorderColor,
+      borderRadius:
+        props.borderStyle?.borderRadius ||
+        ThemeSystem.borderRadiusSize[defaultTheme.inputBorderRadius],
       alignItems: "center",
       ..._style,
     },
-    label: {
-      color: props.labelColor ? props.labelColor : "black",
-      paddingLeft: Theme.padding.lg,
-    },
     input: {
       flex: 1,
-      padding: Theme.padding.none,
+      padding: ThemeSystem.padding[defaultTheme.inputPaddingSize],
+      ..._inputStyle,
     },
   });
 };

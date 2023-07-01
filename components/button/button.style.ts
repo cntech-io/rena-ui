@@ -1,4 +1,4 @@
-import { StyleSheet, TextStyle, ViewStyle } from "react-native";
+import { StyleSheet } from "react-native";
 import { ButtonStyleProps } from "./button.props";
 import { flattenStyle } from "../../utils";
 import { ThemeSystem } from "../../theme";
