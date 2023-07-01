@@ -9,15 +9,16 @@ const inputStyle = (props: InputStyleProps) => {
   const _inputStyle = flattenStyle(props.inputStyle);
   return StyleSheet.create({
     root: {
-      height: defaultTheme.inputRowHeightSize,
-      padding: defaultTheme.inputPaddingSize,
+      height: ThemeSystem.fixedRowHeight[defaultTheme.inputRowHeightSize],
+      padding: ThemeSystem.padding[defaultTheme.inputPaddingSize],
       minWidth: defaultTheme.inputMinWidth,
       margin:
         ThemeSystem.margin[props.marginSize || defaultTheme.inputMarginSize],
     },
     rootLabelled: {
-      height: defaultTheme.inputRowHeightSizeWithTitle,
-      padding: defaultTheme.inputPaddingSize,
+      height:
+        ThemeSystem.fixedRowHeight[defaultTheme.inputRowHeightSizeWithTitle],
+      padding: ThemeSystem.padding[defaultTheme.inputPaddingSize],
       minWidth: defaultTheme.inputMinWidth,
       margin:
         ThemeSystem.margin[props.marginSize || defaultTheme.inputMarginSize],
