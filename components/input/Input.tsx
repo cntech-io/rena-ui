@@ -27,7 +27,6 @@ const Input = (props: InputProps) => {
     >
       {titleComponent}
       <Flex
-        fill
         paddingSize={defaultTheme.inputContainerPadding}
         direction="row"
         style={leftComponent ? _style.wrapperWithIcon : _style.wrapper}
