@@ -1,8 +1,8 @@
 import { StyleSheet, TextStyle } from "react-native";
 import { TextStyleProps } from "./text.props";
-import { ThemeSystem } from "../../theme";
 import defaultTheme from "../../theme/default";
 import { flattenStyle } from "../../utils";
+import { ThemeSystem } from "../../theme";
 
 const textStyle = (props: TextStyleProps) => {
   const _style = flattenStyle(props.style);

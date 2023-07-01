@@ -38,7 +38,7 @@ const Input = (props: InputProps) => {
           onChangeText={onChangeText}
           value={value}
           placeholder={placeholder}
-          hitSlop={{ top: 15, left: 15, right: 15, bottom: 15 }}
+          hitSlop={defaultTheme.inputHitSlop}
           style={[_style.input, props.inputStyle]}
           {...props.inputProps}
         />

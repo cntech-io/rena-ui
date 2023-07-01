@@ -1,3 +1,4 @@
+import { Direction, PaddingSize } from "../../theme/theme.type";
 import { ButtonProps } from "../button/button.props";
 
 export type ButtonGroupProps = {

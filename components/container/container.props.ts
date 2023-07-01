@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { ViewStyle } from "react-native";
+import { HeaderHeightSize, PaddingSize } from "../../theme/theme.type";
 
 export type ContainerProps = {
   safeAreaFlag?: boolean;

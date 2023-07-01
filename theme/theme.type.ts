@@ -1,3 +1,5 @@
+import { Insets } from "react-native";
+
 enum SizeEnum {
   NONE,
   XS,
@@ -8,11 +10,14 @@ enum SizeEnum {
   XXL,
 }
 
-type Direction = "column" | "row" | "row-reverse" | "column-reverse";
+enum PositionEnum {
+  NONE,
+  MIDDLE,
+}
 
-type Position = "middle" | undefined;
+export type Direction = "column" | "row" | "row-reverse" | "column-reverse";
 
-type HeaderLayout =
+export type HeaderLayout =
   | "title-only"
   | "title-buttons-together"
   | "title-left-button-together"
@@ -21,22 +26,28 @@ type HeaderLayout =
   | "left-button-only"
   | "buttons-only";
 
-type Size = keyof typeof SizeEnum;
+export type Size = keyof typeof SizeEnum;
+export type Position = keyof typeof PositionEnum;
 
-type PaddingSize = keyof Partial<Omit<typeof SizeEnum, "XL" | "XXL">>;
-type MarginSize = keyof Partial<Omit<typeof SizeEnum, "XL" | "XXL">>;
-type HeaderHeightSize = keyof Partial<
+export type PaddingSize = keyof Partial<Omit<typeof SizeEnum, "XL" | "XXL">>;
+export type MarginSize = keyof Partial<Omit<typeof SizeEnum, "XL" | "XXL">>;
+export type HeaderHeightSize = keyof Partial<
   Omit<typeof SizeEnum, "NONE" | "XL" | "XXL">
 >;
-type IconSize = keyof Partial<Omit<typeof SizeEnum, "NONE" | "XL" | "XXL">>;
-type TextSize = keyof Partial<Omit<typeof SizeEnum, "NONE" | "XL" | "XXL">>;
-type FixedRowHeight = keyof Partial<
+export type IconSize = keyof Partial<
+  Omit<typeof SizeEnum, "NONE" | "XL" | "XXL">
+>;
+export type TextSize = keyof Partial<
+  Omit<typeof SizeEnum, "NONE" | "XL" | "XXL">
+>;
+export type FixedRowHeight = keyof Partial<
   Omit<typeof SizeEnum, "NONE" | "XL" | "XXL">
 >;
 
 type BorderRadiusSize = keyof Partial<Omit<typeof SizeEnum, "XXL">>;
 
-type Theme = {
+export type Theme = {
+  position: { [k in Position]: object };
   padding: { [k in PaddingSize]: number };
   margin: { [k in MarginSize]: number };
   headerHeight: { [k in HeaderHeightSize]: number };
@@ -48,14 +59,18 @@ type Theme = {
   borderRadiusSize: { [k in BorderRadiusSize]: number };
 };
 
-type DefaultTheme = {
+export type DefaultTheme = {
   textPaddingSize: `${PaddingSize}`;
   flexPaddingSize: `${PaddingSize}`;
   flexDirection: `${Direction}`;
+  flexPosition: `${Position}`;
   iconPaddingSize: `${PaddingSize}`;
   buttonTextSize: `${TextSize}`;
   buttonHeight: `${FixedRowHeight}`;
   buttonHorizontalPadding: `${PaddingSize}`;
+  buttonBackgroundColor: string;
+  buttonTextColor: string;
+  buttonTextPosition: `${Position}`;
   buttonBorderRadius: `${BorderRadiusSize}`;
   headerIconSize: `${IconSize}`;
   headerTextSize: `${TextSize}`;
@@ -68,4 +83,5 @@ type DefaultTheme = {
   inputBorderWidth: number;
   inputBorderColor: string;
   inputContainerPadding: `${PaddingSize}`;
+  inputHitSlop: Insets;
 };

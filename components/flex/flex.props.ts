@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { LayoutChangeEvent, ViewStyle } from "react-native";
+import { Direction, PaddingSize, Position } from "../../theme/theme.type";
 
 export type FlexProps = {
   direction?: Direction;

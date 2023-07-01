@@ -1,5 +1,6 @@
 import { TextStyle } from "react-native";
 import { ReactNode } from "react";
+import { TextSize } from "../../theme/theme.type";
 
 export type TextProps = {
   size: TextSize;

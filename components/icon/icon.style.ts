@@ -11,8 +11,7 @@ const iconStyle = (props: IconStyleProps) => {
     root: {
       width: _size,
       height: _size,
-      justifyContent: "center",
-      alignItems: "center",
+      ...ThemeSystem.position.MIDDLE,
       ..._style,
     },
     image: {

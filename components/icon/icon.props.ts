@@ -1,4 +1,5 @@
 import { ImageSourcePropType, ViewStyle } from "react-native";
+import { IconSize } from "../../theme/theme.type";
 
 export type IconProps = {
   size: IconSize;

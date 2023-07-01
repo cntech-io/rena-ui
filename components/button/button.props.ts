@@ -1,4 +1,5 @@
 import { TextStyle, ViewStyle } from "react-native";
+import { TextSize } from "../../theme/theme.type";
 
 export type ButtonProps = {
   onPress: () => void;

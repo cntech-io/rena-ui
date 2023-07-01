@@ -1,4 +1,5 @@
 import { ImageSourcePropType, TextStyle, ViewStyle } from "react-native";
+import { HeaderLayout, IconSize, PaddingSize } from "../../theme/theme.type";
 
 export type HeaderProps = {
   iconSources: ImageSourcePropType[];

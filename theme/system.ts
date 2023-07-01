@@ -1,4 +1,13 @@
+import { Theme } from "./theme.type";
+
 const ThemeSystem: Theme = {
+  position: {
+    NONE: {},
+    MIDDLE: {
+      justifyContent: "center",
+      alignItems: "center",
+    },
+  },
   padding: {
     NONE: 0,
     XS: 2,

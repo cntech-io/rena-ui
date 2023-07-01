@@ -12,17 +12,16 @@ const buttonStyle = (props: ButtonStyleProps) => {
   return StyleSheet.create({
     root: {
       height: ThemeSystem.fixedRowHeight[defaultTheme.buttonHeight],
-      backgroundColor: "black",
+      backgroundColor: defaultTheme.buttonBackgroundColor,
       paddingLeft: ThemeSystem.padding[defaultTheme.buttonHorizontalPadding],
       paddingRight: ThemeSystem.padding[defaultTheme.buttonHorizontalPadding],
       borderRadius:
         ThemeSystem.borderRadiusSize[defaultTheme.buttonBorderRadius],
-      alignItems: "center",
-      justifyContent: "center",
+      ...ThemeSystem.position[defaultTheme.buttonTextPosition],
       ..._style,
     },
     text: {
-      color: "white",
+      color: defaultTheme.buttonTextColor,
       ..._textStyle,
     },
   });

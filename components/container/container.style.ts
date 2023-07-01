@@ -1,11 +1,10 @@
 import { StyleSheet } from "react-native";
 import { ContainerStyleProps } from "./container.props";
 import { ThemeSystem } from "../../theme";
+import { flattenStyle } from "../../utils";
 
 const containerStyle = (props: ContainerStyleProps) => {
-  const _style = Array.isArray(props.style)
-    ? StyleSheet.flatten(props.style)
-    : props.style;
+  const _style = flattenStyle(props.style);
   return StyleSheet.create({
     root: {
       flex: 1,
