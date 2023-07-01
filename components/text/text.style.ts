@@ -1,24 +1,19 @@
 import { StyleSheet, TextStyle } from "react-native";
-import { Size, Theme } from "../style";
+import { TextStyleProps } from "./text.props";
+import { ThemeSystem } from "../../theme";
+import defaultTheme from "../../theme/default";
+import { flattenStyle } from "../../utils";
 
-type Props = {
-  style?: TextStyle | TextStyle[];
-  size: Size;
-  bold?: boolean;
-  center?: boolean;
-};
-
-const textStyle = (props: Props) => {
-  const _style = Array.isArray(props.style)
-    ? StyleSheet.flatten(props.style)
-    : props.style;
+const textStyle = (props: TextStyleProps) => {
+  const _style = flattenStyle(props.style);
   const _center: TextStyle = props.center ? { textAlign: "center" } : {};
+
   return StyleSheet.create({
     root: {
-      fontSize: Theme.textSize[props.size],
+      fontSize: ThemeSystem.textSize[props.size!],
       alignItems: "center",
       fontWeight: props.bold ? "bold" : "normal",
-      padding: Theme.padding.sm,
+      padding: ThemeSystem.padding[defaultTheme.textPaddingSize],
       ..._center,
       ..._style,
     },

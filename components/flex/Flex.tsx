@@ -1,17 +1,7 @@
-import React, { ReactNode } from "react";
-import { LayoutChangeEvent, View, ViewStyle } from "react-native";
-import { Direction, Position, Size } from "../style";
+import React from "react";
 import flexStyle from "./flex.style";
-
-type FlexProps = {
-  direction?: Direction;
-  fill?: boolean;
-  children?: ReactNode;
-  style?: ViewStyle | ViewStyle[];
-  paddingSize: Size;
-  position?: Position;
-  onLayout?: (event: LayoutChangeEvent) => void;
-};
+import { FlexProps } from "./flex.props";
+import { View } from "react-native";
 
 const Flex = (props: FlexProps) => {
   const { children, onLayout, ...styleProps } = props;
@@ -25,5 +15,3 @@ const Flex = (props: FlexProps) => {
 };
 
 export default Flex;
-
-export type { FlexProps };

@@ -1,27 +1,24 @@
 import { StyleSheet, ViewStyle } from "react-native";
-import { Size, Theme } from "../style";
+import { IconStyleProps } from "./icon.props";
+import { flattenStyle } from "../../utils";
+import { ThemeSystem } from "../../theme";
+import defaultTheme from "../../theme/default";
 
-type Props = {
-  size: Size;
-  style?: ViewStyle | ViewStyle[];
-};
-
-const iconStyle = (props: Props) => {
-  const _style = Array.isArray(props.style)
-    ? StyleSheet.flatten(props.style)
-    : props.style;
+const iconStyle = (props: IconStyleProps) => {
+  const _style = flattenStyle(props.style);
+  const _size = ThemeSystem.iconSize[props.size!];
   return StyleSheet.create({
     root: {
-      width: Theme.iconSize[props.size],
-      height: Theme.iconSize[props.size],
+      width: _size,
+      height: _size,
       justifyContent: "center",
       alignItems: "center",
       ..._style,
     },
     image: {
       resizeMode: "contain",
-      width: Theme.iconSize[props.size] - 4,
-      height: Theme.iconSize[props.size] - 4,
+      width: _size - ThemeSystem.padding[defaultTheme.iconPaddingSize],
+      height: _size - ThemeSystem.padding[defaultTheme.iconPaddingSize],
     },
   });
 };

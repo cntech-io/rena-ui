@@ -1,16 +1,14 @@
-import {StyleSheet} from 'react-native';
-import {Size, Theme} from '../style';
+import { StyleSheet } from "react-native";
+import { ThemeSystem } from "../../theme";
+import { IconButtonStyleProps } from "./icon-button.props";
 
-type Props = {
-  size: Size;
-};
-
-const iconButtonStyle = (props: Props) =>
-  StyleSheet.create({
+const iconButtonStyle = (props: IconButtonStyleProps) => {
+  return StyleSheet.create({
     root: {
-      width: Theme.iconSize[props.size],
-      height: Theme.iconSize[props.size],
+      width: ThemeSystem.iconSize[props.size!],
+      height: ThemeSystem.iconSize[props.size!],
     },
   });
+};
 
 export default iconButtonStyle;

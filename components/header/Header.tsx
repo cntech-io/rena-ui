@@ -1,26 +1,13 @@
 import React from "react";
-import { ImageSourcePropType, TextStyle, ViewStyle } from "react-native";
 import Flex from "../flex/Flex";
 import Icon from "../icon/Icon";
 import Spacer from "../spacer/Spacer";
-import { HeaderLayout, Size } from "../style";
 import Text from "../text/Text";
 import headerStyle from "./header.style";
 import IconButton from "../icon-button/IconButton";
 import LinearGradient from "react-native-linear-gradient";
-
-type HeaderProps = {
-  headerLayout: HeaderLayout;
-  paddingSize: Size;
-  style?: ViewStyle | ViewStyle[];
-  titleStyle?: TextStyle | TextStyle[];
-  title?: string;
-  iconSize?: Size;
-  iconSources: ImageSourcePropType[];
-  onRightButtonPress?: () => void;
-  onLeftButtonPress?: () => void;
-  gradientColors?: string[];
-};
+import { HeaderProps } from "./header.props";
+import defaultTheme from "../../theme/default";
 
 const Header = (props: HeaderProps) => {
   const {
@@ -33,27 +20,36 @@ const Header = (props: HeaderProps) => {
     title,
     ...styleProps
   } = props;
+
   const _style = headerStyle(styleProps);
+
   let leftButton, rightButton;
+
   switch (headerLayout) {
     case "buttons-only":
       rightButton = onRightButtonPress ? (
         <IconButton
           onPress={onRightButtonPress}
-          size={iconSize || "md"}
+          size={iconSize || defaultTheme.headerIconSize}
           source={iconSources[1]}
         />
       ) : (
-        <Icon size={iconSize || "md"} source={iconSources[1]} />
+        <Icon
+          size={iconSize || defaultTheme.headerIconSize}
+          source={iconSources[1]}
+        />
       );
       leftButton = onLeftButtonPress ? (
         <IconButton
           onPress={onLeftButtonPress}
-          size={iconSize || "md"}
+          size={iconSize || defaultTheme.headerIconSize}
           source={iconSources[0]}
         />
       ) : (
-        <Icon size={iconSize || "md"} source={iconSources[0]} />
+        <Icon
+          size={iconSize || defaultTheme.headerIconSize}
+          source={iconSources[0]}
+        />
       );
       if (props.gradientColors && props.gradientColors.length > 1) {
         return (
@@ -87,11 +83,14 @@ const Header = (props: HeaderProps) => {
       leftButton = onLeftButtonPress ? (
         <IconButton
           onPress={onLeftButtonPress}
-          size={iconSize || "md"}
+          size={iconSize || defaultTheme.headerIconSize}
           source={iconSources[0]}
         />
       ) : (
-        <Icon size={iconSize || "md"} source={iconSources[0]} />
+        <Icon
+          size={iconSize || defaultTheme.headerIconSize}
+          source={iconSources[0]}
+        />
       );
       if (props.gradientColors && props.gradientColors.length > 1) {
         return (
@@ -123,11 +122,14 @@ const Header = (props: HeaderProps) => {
       rightButton = onRightButtonPress ? (
         <IconButton
           onPress={onRightButtonPress}
-          size={iconSize || "md"}
+          size={iconSize || defaultTheme.headerIconSize}
           source={iconSources[0]}
         />
       ) : (
-        <Icon size={iconSize || "md"} source={iconSources[0]} />
+        <Icon
+          size={iconSize || defaultTheme.headerIconSize}
+          source={iconSources[0]}
+        />
       );
       if (props.gradientColors && props.gradientColors.length > 1) {
         return (
@@ -166,7 +168,11 @@ const Header = (props: HeaderProps) => {
               direction={"row"}
             >
               <Spacer />
-              <Text style={_style.title} size="lg" bold>
+              <Text
+                style={_style.title}
+                size={defaultTheme.headerTextSize}
+                bold
+              >
                 {title || ""}
               </Text>
               <Spacer />
@@ -182,7 +188,7 @@ const Header = (props: HeaderProps) => {
           direction={"row"}
         >
           <Spacer />
-          <Text style={_style.title} size="lg" bold>
+          <Text style={_style.title} size={defaultTheme.headerTextSize} bold>
             {title || ""}
           </Text>
           <Spacer />
@@ -192,11 +198,14 @@ const Header = (props: HeaderProps) => {
       leftButton = onLeftButtonPress ? (
         <IconButton
           onPress={onLeftButtonPress}
-          size={iconSize || "md"}
+          size={iconSize || defaultTheme.headerIconSize}
           source={iconSources[0]}
         />
       ) : (
-        <Icon size={iconSize || "md"} source={iconSources[0]} />
+        <Icon
+          size={iconSize || defaultTheme.headerIconSize}
+          source={iconSources[0]}
+        />
       );
       if (props.gradientColors && props.gradientColors.length > 1) {
         return (
@@ -209,11 +218,19 @@ const Header = (props: HeaderProps) => {
             >
               {leftButton}
               <Spacer />
-              <Text style={_style.title} size="lg" bold>
+              <Text
+                style={_style.title}
+                size={defaultTheme.headerTextSize}
+                bold
+              >
                 {title || ""}
               </Text>
               <Spacer />
-              <Icon isPlaceholder size={iconSize || "md"} source={0} />
+              <Icon
+                isPlaceholder
+                size={iconSize || defaultTheme.headerIconSize}
+                source={0}
+              />
             </Flex>
           </LinearGradient>
         );
@@ -227,22 +244,29 @@ const Header = (props: HeaderProps) => {
         >
           {leftButton}
           <Spacer />
-          <Text style={_style.title} size="lg" bold>
+          <Text style={_style.title} size={defaultTheme.headerTextSize} bold>
             {title || ""}
           </Text>
           <Spacer />
-          <Icon isPlaceholder size={iconSize || "md"} source={0} />
+          <Icon
+            isPlaceholder
+            size={iconSize || defaultTheme.headerIconSize}
+            source={0}
+          />
         </Flex>
       );
     case "title-right-button-together":
       rightButton = onRightButtonPress ? (
         <IconButton
           onPress={onRightButtonPress}
-          size={iconSize || "md"}
+          size={iconSize || defaultTheme.headerIconSize}
           source={iconSources[0]}
         />
       ) : (
-        <Icon size={iconSize || "md"} source={iconSources[0]} />
+        <Icon
+          size={iconSize || defaultTheme.headerIconSize}
+          source={iconSources[0]}
+        />
       );
       if (props.gradientColors && props.gradientColors.length > 1) {
         return (
@@ -253,9 +277,17 @@ const Header = (props: HeaderProps) => {
               paddingSize={paddingSize}
               direction={"row"}
             >
-              <Icon isPlaceholder size={iconSize || "md"} source={0} />
+              <Icon
+                isPlaceholder
+                size={iconSize || defaultTheme.headerIconSize}
+                source={0}
+              />
               <Spacer />
-              <Text style={_style.title} size="lg" bold>
+              <Text
+                style={_style.title}
+                size={defaultTheme.headerTextSize}
+                bold
+              >
                 {title || ""}
               </Text>
               <Spacer />
@@ -271,9 +303,13 @@ const Header = (props: HeaderProps) => {
           paddingSize={paddingSize}
           direction={"row"}
         >
-          <Icon isPlaceholder size={iconSize || "md"} source={0} />
+          <Icon
+            isPlaceholder
+            size={iconSize || defaultTheme.headerIconSize}
+            source={0}
+          />
           <Spacer />
-          <Text style={_style.title} size="lg" bold>
+          <Text style={_style.title} size={defaultTheme.headerTextSize} bold>
             {title || ""}
           </Text>
           <Spacer />
@@ -284,20 +320,26 @@ const Header = (props: HeaderProps) => {
       rightButton = onRightButtonPress ? (
         <IconButton
           onPress={onRightButtonPress}
-          size={iconSize || "md"}
+          size={iconSize || defaultTheme.headerIconSize}
           source={iconSources[1]}
         />
       ) : (
-        <Icon size={iconSize || "md"} source={iconSources[1]} />
+        <Icon
+          size={iconSize || defaultTheme.headerIconSize}
+          source={iconSources[1]}
+        />
       );
       leftButton = onLeftButtonPress ? (
         <IconButton
           onPress={onLeftButtonPress}
-          size={iconSize || "md"}
+          size={iconSize || defaultTheme.headerIconSize}
           source={iconSources[0]}
         />
       ) : (
-        <Icon size={iconSize || "md"} source={iconSources[0]} />
+        <Icon
+          size={iconSize || defaultTheme.headerIconSize}
+          source={iconSources[0]}
+        />
       );
       if (props.gradientColors && props.gradientColors.length > 1) {
         return (
@@ -310,7 +352,11 @@ const Header = (props: HeaderProps) => {
             >
               {leftButton}
               <Spacer />
-              <Text style={_style.title} size="lg" bold>
+              <Text
+                style={_style.title}
+                size={defaultTheme.headerTextSize}
+                bold
+              >
                 {title || ""}
               </Text>
               <Spacer />
@@ -328,7 +374,7 @@ const Header = (props: HeaderProps) => {
         >
           {leftButton}
           <Spacer />
-          <Text style={_style.title} size="lg" bold>
+          <Text style={_style.title} size={defaultTheme.headerTextSize} bold>
             {title || ""}
           </Text>
           <Spacer />

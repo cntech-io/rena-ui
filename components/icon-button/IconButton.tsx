@@ -1,16 +1,10 @@
 import React from "react";
 import { TouchableOpacity } from "react-native";
-import Icon, { IconProps } from "../icon/Icon";
+import Icon from "../icon/Icon";
 import iconButtonStyle from "./icon-button.style";
+import { IconButtonProps } from "./icon-button.props";
 
-type IconButtonProps = {
-  onPress: () => void;
-  onLongPress?: () => void;
-};
-
-type Props = IconButtonProps & IconProps;
-
-const IconButton = (props: Props) => {
+const IconButton = (props: IconButtonProps) => {
   const { onPress, onLongPress, ...iconProps } = props;
   const _style = iconButtonStyle(iconProps);
   return (

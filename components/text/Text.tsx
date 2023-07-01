@@ -1,22 +1,12 @@
 import React, { ReactNode } from "react";
-import { TextStyle, Text as RNText } from "react-native";
-import { Size } from "../style";
+import { Text as RNText } from "react-native";
 import textStyle from "./text.style";
-
-type TextProps = {
-  children?: ReactNode;
-  size: Size;
-  bold?: boolean;
-  center?: boolean;
-  style?: TextStyle | TextStyle[];
-};
+import { TextProps } from "./text.props";
 
 const Text = (props: TextProps) => {
-  const { children, ...styleProps } = props;
-  const _style = textStyle(styleProps);
+  const { children, ...textStyleProps } = props;
+  const _style = textStyle(textStyleProps);
   return <RNText style={_style.root}>{children}</RNText>;
 };
 
 export default Text;
-
-export type { TextProps };

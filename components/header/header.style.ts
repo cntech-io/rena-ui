@@ -1,17 +1,10 @@
-import { StyleSheet, TextStyle, ViewStyle } from "react-native";
+import { StyleSheet } from "react-native";
+import { HeaderStyleProps } from "./header.props";
+import { flattenStyle } from "../../utils";
 
-type Props = {
-  style?: ViewStyle | ViewStyle[];
-  titleStyle?: TextStyle | TextStyle[];
-};
-
-const headerStyle = (props: Props) => {
-  const _style = Array.isArray(props.style)
-    ? StyleSheet.flatten(props.style)
-    : props.style;
-  const _textStyle = Array.isArray(props.titleStyle)
-    ? StyleSheet.flatten(props.titleStyle)
-    : props.titleStyle;
+const headerStyle = (props: HeaderStyleProps) => {
+  const _style = flattenStyle(props.style);
+  const _textStyle = flattenStyle(props.titleStyle);
   return StyleSheet.create({
     gradient: {
       flex: 1,

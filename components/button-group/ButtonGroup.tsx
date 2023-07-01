@@ -1,21 +1,16 @@
 import React from "react";
 import Flex from "../flex/Flex";
-import { Direction, Size } from "../style";
-import Button, { ButtonProps } from "../button/Button";
-
-type ButtonGroupProps = {
-  buttonProps: ButtonProps[];
-  paddingSize?: Size;
-  direction?: Direction;
-};
+import Button from "../button/Button";
+import { ButtonGroupProps } from "./button-group.props";
+import defaultTheme from "../../theme/default";
 
 const ButtonGroup = (props: ButtonGroupProps) => {
   <Flex
-    direction={props.direction || "row"}
-    paddingSize={props.paddingSize || "md"}
+    direction={props.direction}
+    paddingSize={props.paddingSize || defaultTheme.flexPaddingSize}
   >
-    {props.buttonProps.map((buttonProps) => (
-      <Button {...buttonProps} />
+    {props.buttonPropsArray.map((item) => (
+      <Button {...item} />
     ))}
   </Flex>;
 };

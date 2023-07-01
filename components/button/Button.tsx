@@ -1,18 +1,9 @@
 import React from "react";
-import { TextStyle, TouchableOpacity, ViewStyle } from "react-native";
-import { Size } from "../style";
+import { TouchableOpacity } from "react-native";
 import buttonStyle from "./button.style";
 import Text from "../text/Text";
-
-type ButtonProps = {
-  onPress: () => void;
-  onLongPress?: () => void;
-  style?: ViewStyle | ViewStyle[];
-  label: string;
-  bold?: boolean;
-  textSize?: Size;
-  textStyle?: TextStyle | TextStyle[];
-};
+import { ButtonProps } from "./button.props";
+import defaultTheme from "../../theme/default";
 
 const Button = (props: ButtonProps) => {
   const { onLongPress, onPress, label, bold, textSize, ...styleProps } = props;
@@ -23,7 +14,11 @@ const Button = (props: ButtonProps) => {
       onPress={onPress}
       onLongPress={onLongPress}
     >
-      <Text style={_style.text} bold={bold || true} size={textSize || "md"}>
+      <Text
+        style={_style.text}
+        bold={bold || true}
+        size={textSize || defaultTheme.buttonTextSize}
+      >
         {label}
       </Text>
     </TouchableOpacity>

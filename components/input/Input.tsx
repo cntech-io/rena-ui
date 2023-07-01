@@ -10,22 +10,13 @@ import Icon from "../icon/Icon";
 import Text from "../text/Text";
 import inputStyle from "./input.style";
 import { Size } from "../style";
-
-type InputProps = {
-  style?: ViewStyle | ViewStyle[];
-  inputProps?: TextInputProps;
-  iconSource?: ImageSourcePropType;
-  placeholder?: string;
-  value: string;
-  label?: string;
-  secureTextEntry?: boolean;
-  onChangeText: (text: string) => void;
-  borderColor?: string;
-  labelColor?: string;
-  iconSize?: Size;
-};
+import { InputProps } from "./input.props";
 
 const Input = (props: InputProps) => {
+  
+}
+
+const InputX = (props: InputProps) => {
   const {
     label,
     inputProps,
