@@ -87,6 +87,7 @@ const Header = (props: HeaderProps) => {
         <LinearGradient colors={props.gradientColors} style={_style.gradient}>
           <Flex
             fill
+            marginSize="NONE"
             style={_style.root}
             paddingSize={paddingSize}
             direction={"row"}
@@ -100,6 +101,7 @@ const Header = (props: HeaderProps) => {
     }
     return (
       <Flex
+        marginSize="NONE"
         fill
         style={_style.root}
         paddingSize={paddingSize}
