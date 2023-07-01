@@ -6,4 +6,5 @@ export type ButtonGroupProps = {
   paddingSize?: PaddingSize;
   direction?: Direction;
   marginSize?: MarginSize;
+  scrollable?: boolean;
 };
