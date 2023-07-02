@@ -75,6 +75,7 @@ export type DefaultTheme = {
   buttonTextPosition: `${Position}`;
   buttonBorderRadius: `${BorderRadiusSize}`;
   buttonMarginSize: `${MarginSize}`;
+  buttonGroupContainerPadding: `${PaddingSize}`;
   headerIconSize: `${IconSize}`;
   headerTextSize: `${TextSize}`;
   inputRowHeightSize: `${FixedRowHeight}`;

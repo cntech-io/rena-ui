@@ -18,6 +18,7 @@ const defaultTheme: DefaultTheme = {
   buttonTextColor: "white",
   buttonTextPosition: "MIDDLE",
   buttonMarginSize: "XS",
+  buttonGroupContainerPadding: "SM",
   headerTextSize: "LG",
   inputRowHeightSize: "MD",
   inputPaddingSize: "NONE",

@@ -8,30 +8,36 @@ import { ScrollView } from "react-native";
 const ButtonGroup = (props: ButtonGroupProps) => {
   if (props.scrollable) {
     return (
+      <Flex paddingSize={defaultTheme.buttonGroupContainerPadding}>
+        {props.titleComponent}
+        <Flex
+          direction={props.direction}
+          paddingSize={props.paddingSize || defaultTheme.flexPaddingSize}
+          marginSize={props.marginSize || defaultTheme.flexMarginSize}
+        >
+          <ScrollView
+            horizontal={props.direction?.includes("row") ? true : false}
+          >
+            {props.buttonPropsArray.map((item) => (
+              <Button {...item} />
+            ))}
+          </ScrollView>
+        </Flex>
+      </Flex>
+    );
+  }
+  return (
+    <Flex paddingSize={defaultTheme.buttonGroupContainerPadding}>
+      {props.titleComponent}
       <Flex
         direction={props.direction}
         paddingSize={props.paddingSize || defaultTheme.flexPaddingSize}
         marginSize={props.marginSize || defaultTheme.flexMarginSize}
       >
-        <ScrollView
-          horizontal={props.direction?.includes("row") ? true : false}
-        >
-          {props.buttonPropsArray.map((item) => (
-            <Button {...item} />
-          ))}
-        </ScrollView>
+        {props.buttonPropsArray.map((item) => (
+          <Button {...item} />
+        ))}
       </Flex>
-    );
-  }
-  return (
-    <Flex
-      direction={props.direction}
-      paddingSize={props.paddingSize || defaultTheme.flexPaddingSize}
-      marginSize={props.marginSize || defaultTheme.flexMarginSize}
-    >
-      {props.buttonPropsArray.map((item) => (
-        <Button {...item} />
-      ))}
     </Flex>
   );
 };

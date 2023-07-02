@@ -7,4 +7,5 @@ export type ButtonGroupProps = {
   direction?: Direction;
   marginSize?: MarginSize;
   scrollable?: boolean;
+  titleComponent?: JSX.Element;
 };
