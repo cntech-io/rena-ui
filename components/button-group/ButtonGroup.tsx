@@ -19,7 +19,7 @@ const ButtonGroup = (props: ButtonGroupProps) => {
             horizontal={props.direction?.includes("row") ? true : false}
           >
             {props.buttonPropsArray.map((item) => (
-              <Button {...item} />
+              <Button key={item.label} {...item} />
             ))}
           </ScrollView>
         </Flex>
@@ -35,7 +35,7 @@ const ButtonGroup = (props: ButtonGroupProps) => {
         marginSize={props.marginSize || defaultTheme.flexMarginSize}
       >
         {props.buttonPropsArray.map((item) => (
-          <Button {...item} />
+          <Button key={item.label} {...item} />
         ))}
       </Flex>
     </Flex>
