@@ -59,12 +59,12 @@ const Header = (props: HeaderProps) => {
       <IconButton
         onPress={onRightButtonPress}
         size={iconSize || defaultTheme.headerIconSize}
-        source={iconSources[0]}
+        source={iconSources[iconSources.length - 1]}
       />
     ) : (
       <Icon
         size={iconSize || defaultTheme.headerIconSize}
-        source={iconSources[0]}
+        source={iconSources[iconSources.length - 1]}
       />
     );
   };
