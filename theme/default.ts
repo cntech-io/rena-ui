@@ -3,6 +3,7 @@ import { DefaultTheme } from "./theme.type";
 
 const defaultTheme: DefaultTheme = {
   headerIconSize: "MD",
+  headerPaddingSize: "SM",
   textMarginSize: "XS",
   textPaddingSize: "SM",
   flexPaddingSize: "SM",

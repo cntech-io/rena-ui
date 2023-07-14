@@ -6,7 +6,7 @@ export type ContainerProps = {
   safeAreaFlag?: boolean;
   children?: ReactNode;
   paddingSize: PaddingSize;
-  headerSize: HeaderHeightSize;
+  headerSize?: HeaderHeightSize;
   style?: ViewStyle | ViewStyle[];
   headerComponent?: ReactNode;
   gradientColors?: string[];

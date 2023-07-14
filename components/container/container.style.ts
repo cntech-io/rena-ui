@@ -2,6 +2,7 @@ import { StyleSheet } from "react-native";
 import { ContainerStyleProps } from "./container.props";
 import { ThemeSystem } from "../../theme";
 import { flattenStyle } from "../../utils";
+import defaultTheme from "../../theme/default";
 
 const containerStyle = (props: ContainerStyleProps) => {
   const _style = flattenStyle(props.style);
@@ -18,7 +19,10 @@ const containerStyle = (props: ContainerStyleProps) => {
       flex: 1,
     },
     headerContainer: {
-      height: ThemeSystem.headerHeight[props.headerSize!],
+      height:
+        ThemeSystem.headerHeight[
+          props.headerSize || defaultTheme.headerPaddingSize
+        ],
       justifyContent: "center",
     },
   });

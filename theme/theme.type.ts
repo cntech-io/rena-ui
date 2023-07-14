@@ -61,6 +61,7 @@ export type Theme = {
 
 export type DefaultTheme = {
   textPaddingSize: `${PaddingSize}`;
+  headerPaddingSize: `${HeaderHeightSize}`;
   textMarginSize: `${MarginSize}`;
   flexPaddingSize: `${PaddingSize}`;
   flexDirection: `${Direction}`;
